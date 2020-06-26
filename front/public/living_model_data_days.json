@@ -1,0 +1,1063 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "groupName": "Моложе трудоспособного возраста",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": true },
+            { "name": "Школа", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": true },
+            { "name": "Зоопарк", "need": true },
+            { "name": "Ботанический сад", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "groupName": "Дети до-дошкольного возраста (3-7)",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": true },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": true },
+            { "name": "Зоопарк", "need": true },
+            { "name": "Ботанический сад", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "groupName": "Дети младшего школьного возраста (7-11)",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": true },
+            { "name": "Зоопарк", "need": true },
+            { "name": "Ботанический сад", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детский сад", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "groupName": "Подростки младшего возраста (12-14)",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Школа", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Секция", "need": true }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Секция", "need": true }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Детская площадка", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": true },
+            { "name": "Зоопарк", "need": true },
+            { "name": "Ботанический сад", "need": true },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Секция", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Секция", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Детская площадка", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Школа", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Зоопарк", "need": false },
+            { "name": "Ботанический сад", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Секция", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "groupName": "Трудоспособного возраста",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Автопарковка", "need": true },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": true }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Автопарковка", "need": true },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": true },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": true },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": true },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "groupName": "Студенты (16-25)",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": true },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "groupName": "Работающие горожане среднего возраста (30-40)",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": true },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": true },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": true },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": true },
+            { "name": "Отделение банка", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "groupName": "Старше трудоспособного возраста",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Автопарковка", "need": true },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": true },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": true }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Автопарковка", "need": true },
+            { "name": "Остановка ОТ", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": true },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": true },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        },
+        {
+          "daytype": "Чрезвычайное происшествие",
+          "services": [
+            { "name": "Автопарковка", "need": false },
+            { "name": "Остановка ОТ", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Кинотеатр", "need": false },
+            { "name": "Театр", "need": false },
+            { "name": "Музей", "need": false },
+            { "name": "Кафе", "need": false },
+            { "name": "Магазин", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Ресторан", "need": false },
+            { "name": "Общественные пространства", "need": false },
+            { "name": "Отделение банка", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "groupName": "Родители",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детская площадка", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": true }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детская площадка", "need": true },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": true },
+            { "name": "Аптека", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "groupName": "Горожане с младенцами",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": true }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": true },
+            { "name": "Аптека", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "groupName": "Горожане с детьми до-детсадовского возраста (1-3)",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детская площадка", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Детская площадка", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": true },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": true }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": true },
+            { "name": "Аптека", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Детская площадка", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Поликлиника", "need": false },
+            { "name": "Больница", "need": false },
+            { "name": "Аптека", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "groupName": "Владельцы собак",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Места для выгула собак", "need": true },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Ветеринарии", "need": false }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Места для выгула собак", "need": true },
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Ветеринарии", "need": false }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Места для выгула собак", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Ветеринарии", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Места для выгула собак", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Ветеринарии", "need": true }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Места для выгула собак", "need": false },
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Ветеринарии", "need": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "groupName": "Горожане, ведущие активный образ жизни",
+      "days": [
+        {
+          "daytype": "Рабочий день",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Спортивная площадка", "need": true },
+            { "name": "Спортивная секция", "need": false },
+            { "name": "Велодорожка", "need": true },
+            { "name": "Спортивный клуб", "need": true }
+          ]
+        },
+        {
+          "daytype": "Выходной день",
+          "services": [
+            { "name": "Зеленая зона", "need": true },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Спортивная секция", "need": true },
+            { "name": "Велодорожка", "need": true },
+            { "name": "Спортивный клуб", "need": true }
+          ]
+        },
+        {
+          "daytype": "Праздничный день. Новый год",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Спортивная секция", "need": false },
+            { "name": "Велодорожка", "need": false },
+            { "name": "Спортивный клуб", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Травма",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Спортивная секция", "need": false },
+            { "name": "Велодорожка", "need": false },
+            { "name": "Спортивный клуб", "need": false }
+          ]
+        },
+        {
+          "daytype": "Особый день. Свидание",
+          "services": [
+            { "name": "Зеленая зона", "need": false },
+            { "name": "Спортивная площадка", "need": false },
+            { "name": "Спортивная секция", "need": false },
+            { "name": "Велодорожка", "need": false },
+            { "name": "Спортивный клуб", "need": false }
+          ]
+        }
+      ]
+    }
+  ]
+}

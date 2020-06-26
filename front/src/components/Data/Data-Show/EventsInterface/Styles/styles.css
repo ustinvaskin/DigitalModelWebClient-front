@@ -1,0 +1,46 @@
+/* // Styles for model population/ description  */
+
+/* Butto on geojson  */
+
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container {
+  height: 500px;
+}
+
+.zoom-slider {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.basemaps-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  height: auto;
+  width: auto;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.Select-Aside {
+  margin-left: 25px;
+}
+
+#demo-controlled-open-select {
+  width: 200px;
+}
+
+select {
+  width: 200px;
+}
+
+label {
+  margin: 0 5px;
+}
+input {
+  margin: 0 10px;
+}

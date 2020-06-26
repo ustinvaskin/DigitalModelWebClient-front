@@ -1,0 +1,1460 @@
+{
+  "territories": [
+    {
+      "id": 1,
+      "short_name": "СПБ",
+      "full_name": "Санкт-Петербург",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.5,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 50,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 20,
+              "provision": 0.7,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.7,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.5,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.6,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "short_name": "Адмиралтейский",
+      "full_name": "Адмиралтейский район",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.2,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.4,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.8,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.7,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.3,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.4,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "short_name": "Адмиралтейский",
+      "full_name": "МО Адмиралтейский",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.5,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.5,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.7,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.6,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.6,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.2,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.6,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "short_name": "Екатерингофский",
+      "full_name": "МО Екатерингофский",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.4,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.8,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.7,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.2,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.4,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "short_name": "Измайловский",
+      "full_name": "МО Измайловский",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.3,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.3,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.3,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.7,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.8,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.2,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.5,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "short_name": "Коломна",
+      "full_name": "МО Коломна",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.3,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.2,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.2,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.3,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.7,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.7,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.1,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.5,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "short_name": "Семеновский",
+      "full_name": "МО Семеновский",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.3,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.4,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.8,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.6,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.2,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.5,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "short_name": "Сенной",
+      "full_name": "МО Сенной",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.3,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 10,
+              "provision": 0.2,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 8,
+              "provision": 0.3,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 5,
+              "provision": 0.3,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 60,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 30,
+              "provision": 0.7,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 20,
+          "provision": 0.6,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 40,
+          "provision": 0.6,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 25,
+          "provision": 0.2,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 20,
+          "provision": 0.4,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "short_name": "Василеостровский",
+      "full_name": "Василеостровский район",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.5,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 45,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 15,
+              "provision": 0.9,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 15,
+          "provision": 0.6,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 45,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 25,
+              "provision": 0.3,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 20,
+          "provision": 0.4,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 15,
+          "provision": 0.5,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "short_name": "МО 7",
+      "full_name": "7-й муниципальный округ",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.6,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.4,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.5,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.6,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 45,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 15,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 15,
+          "provision": 0.7,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 45,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 25,
+              "provision": 0.2,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 20,
+          "provision": 0.3,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 15,
+          "provision": 0.5,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "short_name": "Васильевский",
+      "full_name": "МО Васильевский",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.4,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.5,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 45,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 15,
+              "provision": 0.9,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 15,
+          "provision": 0.6,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 45,
+          "provision": 0.6,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 25,
+              "provision": 0.3,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 20,
+          "provision": 0.3,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 15,
+          "provision": 0.4,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "short_name": "Гавань",
+      "full_name": "МО Гавань",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.6,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.6,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 45,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 15,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 15,
+          "provision": 0.6,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 45,
+          "provision": 0.5,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 25,
+              "provision": 0.3,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 20,
+          "provision": 0.5,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 15,
+          "provision": 0.4,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "short_name": "Морской",
+      "full_name": "МО Морской",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.6,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.3,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.4,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.6,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 45,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 15,
+              "provision": 0.8,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 18,
+              "provision": 0.9,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 15,
+          "provision": 0.7,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 45,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 25,
+              "provision": 0.3,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.3,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 20,
+          "provision": 0.5,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 15,
+          "provision": 0.6,
+          "avg_age": 29
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "short_name": "Остров Декабристов",
+      "full_name": "МО Остров Декабристов",
+      "groups": [
+        {
+          "id": 1,
+          "name": "Моложе трудоспособного возраста",
+          "amount": 30,
+          "provision": 0.3,
+          "subgroup": [
+            {
+              "id": 1.1,
+              "name": "Дети дошкольного возраста",
+              "amount": 12,
+              "provision": 0.2,
+              "avg_age": 5
+            },
+            {
+              "id": 1.2,
+              "name": "Дети младшего школьного возраста",
+              "amount": 10,
+              "provision": 0.3,
+              "avg_age": 9
+            },
+            {
+              "id": 1.3,
+              "name": "Подростки младшего возраста",
+              "amount": 8,
+              "provision": 0.3,
+              "avg_age": 13
+            }
+          ],
+          "avg_age": 8
+        },
+        {
+          "id": 2,
+          "name": "Трудоспособного возраста",
+          "amount": 45,
+          "provision": 0.8,
+          "subgroup": [
+            {
+              "id": 2.1,
+              "name": "Студенты",
+              "amount": 15,
+              "provision": 0.7,
+              "avg_age": 20
+            },
+            {
+              "id": 2.2,
+              "name": "Работающие горожане среднего возраста",
+              "amount": 18,
+              "provision": 0.8,
+              "avg_age": 34
+            }
+          ],
+          "avg_age": 27
+        },
+        {
+          "id": 3,
+          "name": "Старше трудоспособного возраста",
+          "amount": 15,
+          "provision": 0.5,
+          "avg_age": 65
+        },
+        {
+          "id": 4,
+          "name": "Родители",
+          "amount": 45,
+          "provision": 0.4,
+          "subgroup": [
+            {
+              "id": 4.1,
+              "name": "Горожане с младенцами",
+              "amount": 25,
+              "provision": 0.1,
+              "avg_age": 27
+            },
+            {
+              "id": 4.2,
+              "name": "Горожане с детьми до-детсадовского возраста",
+              "amount": 20,
+              "provision": 0.2,
+              "avg_age": 29
+            }
+          ],
+          "avg_age": 32
+        },
+        {
+          "id": 5.1,
+          "name": "Владельцы собак",
+          "amount": 20,
+          "provision": 0.5,
+          "avg_age": 40
+        },
+        {
+          "id": 5.2,
+          "name": "Горожане, ведущие активный образ жизни",
+          "amount": 15,
+          "provision": 0.3,
+          "avg_age": 29
+        }
+      ]
+    }
+  ]
+}

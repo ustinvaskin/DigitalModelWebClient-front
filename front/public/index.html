@@ -1,0 +1,131 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Актульные городские данные СПБ</title>
+
+  <!-- This site is optimized with the Yoast SEO plugin v12.9.1 - https://yoast.com/wordpress/plugins/seo/ -->
+  <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Актульные городские данные СПБ">
+  <!-- Change the url -->
+  <meta property="og:url" content="/">
+  <meta property="og:site_name" content="Open data service Актульные городские данные СПБ">
+
+
+  <meta name="twitter:title" content="Актульные городские данные СПБ">
+
+
+
+
+  <script type="text/javascript" src="https://hri.fi/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+
+
+
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <style type="text/css">
+    .recentcomments a {
+      display: inline !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <!-- END recaptcha -->
+  <script data-cfasync="false" type="text/javascript">if (window.addthis_product === undefined) { window.addthis_product = "wpp"; } if (window.wp_product_version === undefined) { window.wp_product_version = "wpp-6.2.6"; } if (window.addthis_share === undefined) { window.addthis_share = {}; } if (window.addthis_config === undefined) { window.addthis_config = { "data_track_clickback": true, "ignore_server_config": true, "ui_atversion": 300 }; } if (window.addthis_layers === undefined) { window.addthis_layers = {}; } if (window.addthis_layers_tools === undefined) { window.addthis_layers_tools = []; } else { } if (window.addthis_plugin_info === undefined) { window.addthis_plugin_info = { "info_status": "enabled", "cms_name": "WordPress", "plugin_name": "Share Buttons by AddThis", "plugin_version": "6.2.6", "plugin_mode": "WordPress", "anonymous_profile_id": "wp-17267c6532fcf1a21e401567b97a540e", "page_info": { "template": "home", "post_type": "" }, "sharing_enabled_on_post_via_metabox": false }; }
+    (function () {
+      var first_load_interval_id = setInterval(function () {
+        if (typeof window.addthis !== 'undefined') {
+          window.clearInterval(first_load_interval_id);
+          if (typeof window.addthis_layers !== 'undefined' && Object.getOwnPropertyNames(window.addthis_layers).length > 0) {
+            window.addthis.layers(window.addthis_layers);
+          }
+          if (Array.isArray(window.addthis_layers_tools)) {
+            for (i = 0; i < window.addthis_layers_tools.length; i++) {
+              window.addthis.layers(window.addthis_layers_tools[i]);
+            }
+          }
+        }
+      }, 1000)
+    }());
+  </script>
+  <script src="https://use.fontawesome.com/4f2a9d3d3d.js"></script>
+  <link href="https://use.fontawesome.com/4f2a9d3d3d.css" media="all" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+  <script> (function (h, o, t, j, a, r) { h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) }; h._hjSettings = { hjid: 729166, hjsv: 6 }; a = o.getElementsByTagName('head')[0]; r = o.createElement('script'); r.async = 1; r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv; a.appendChild(r); })(window, document, 'static.hotjar.com/c/hotjar-', '.js?sv='); </script>
+  <script async="" src="static.hotjar.com/c/hotjar-729166.js?sv=6"></script>
+  <script async="" type="text/javascript" src="https://hri-dataportaali.disqus.com/count.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+</head>
+
+
+<!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+<!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+</body>
+
+
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var countVars = { "disqusShortname": "hri-dataportaali" };
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="main-0100.js"></script>
+<script type="text/javascript" src="https://hri.fi/wp-includes/js/wp-embed.min.js?ver=5.3.3"></script>
+<script type="text/javascript">
+  var _saq = _saq || [];
+
+  (function () {
+
+    var account = 'itmo-account';
+    var page_name = '';
+    var section = '';
+
+    var snbscript = document.createElement('script');
+    snbscript.type = 'text/javascript';
+    snbscript.async = true;
+    snbscript.src = ('https:' == document.location.protocol ? 'https://' : 'http://')
+      + 'eu1.snoobi.com/snoop.php?tili=' + account
+      + '&page_name=' + page_name
+      + '&section=' + section;
+
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(snbscript, s);
+  })();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</html>
