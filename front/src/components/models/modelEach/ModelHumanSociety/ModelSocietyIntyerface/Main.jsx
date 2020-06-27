@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
@@ -7,43 +7,35 @@ import ChartNodes from "./ChartsNode.jsx";
 import "./Styles/styles.css";
 import TableSocial from "./SocialGropusFromNodeChart.jsx";
 
-class MapIs extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      dataGraph: [],
-      DataGroups: [],
-      SelectedTerrName: "",
-    };
-  }
+function MapIs() {
+      let data = [];
+      const [dataGraph, setDataGraph] = useState([]);
+      const [DataGroups, setDataGroups] = useState([]);
+      const [SelectedTerrName, setSelectedTerrName] = useState("");
 
   // Getting data from API fror groups
-  componentDidMount() {
+  useEffect(() => {
     axios.get("./living_model_data_groups.json").then((res) => {
-      const DataGroups = res.data.territories;
-      this.setState({ DataGroups });
+      setDataGroups(res.data.territories);
     });
     // Getting data from API charts bubble nodes
 
     axios.get("./AllCharts.json").then((res) => {
-      const dataGraph = res.data;
-      this.setState({ dataGraph });
+      setDataGraph(res.data);
     });
-  }
+  })
 
-  onSelectTerr = (e) => {
-    this.setState({ SelectedTerrName: e.target.value });
+  let onSelectTerr = (e) => {
+    setSelectedTerrName(e.target.value);
   };
 
-  onSelectTerrBeg = (e) => {
-    this.setState({ SelectedTerrName: "Санкт-Петербург" });
+  let onSelectTerrBeg = (e) => {
+    setSelectedTerrName("Санкт-Петербург");
   };
 
-  render() {
-    console.log(this.state.SelectedTerrName);
+    console.log(SelectedTerrName);
 
-    console.log(this.state.dataGraph["Санкт-Петербург"]);
+    console.log(dataGraph["Санкт-Петербург"]);
     return (
       <div>
         <br />
@@ -86,7 +78,7 @@ class MapIs extends React.Component {
                 <br />
                 <select className="select-css" onChange={this.onSelectTerr}>
                   <option value="Не выбрано">Не выбрано</option>
-                  {this.state.DataGroups.map((data, e) => (
+                  {DataGroups.map((data, e) => (
                     <option
                       className="option-css"
                       class="list-item"
@@ -155,58 +147,58 @@ class MapIs extends React.Component {
               {/* END OF _____Aside Left */}
               {/* Main cotent  */}
               <div class="col-md-5 col-sm-12 col-xs-12 news-content">
-                {this.state.SelectedTerrName === "Санкт-Петербург" && (
-                  <ChartNodes data={this.state.dataGraph["Санкт-Петербург"]} />
+                {SelectedTerrName === "Санкт-Петербург" && (
+                  <ChartNodes data={dataGraph["Санкт-Петербург"]} />
                 )}
-                {this.state.SelectedTerrName === "Адмиралтейский район" && (
+                {SelectedTerrName === "Адмиралтейский район" && (
                   <ChartNodes
-                    data={this.state.dataGraph["Адмиралтейский район"]}
+                    data={dataGraph["Адмиралтейский район"]}
                   />
                 )}
-                {this.state.SelectedTerrName === "МО Адмиралтейский" && (
+                {SelectedTerrName === "МО Адмиралтейский" && (
                   <ChartNodes
-                    data={this.state.dataGraph["МО Адмиралтейский"]}
+                    data={dataGraph["МО Адмиралтейский"]}
                   />
                 )}
-                {this.state.SelectedTerrName === "МО Екатерингофский" && (
+                {SelectedTerrName === "МО Екатерингофский" && (
                   <ChartNodes
-                    data={this.state.dataGraph["МО Екатерингофский"]}
+                    data={dataGraph["МО Екатерингофский"]}
                   />
                 )}
-                {this.state.SelectedTerrName === "МО Измайловский" && (
-                  <ChartNodes data={this.state.dataGraph["МО Измайловский"]} />
+                {SelectedTerrName === "МО Измайловский" && (
+                  <ChartNodes data={dataGraph["МО Измайловский"]} />
                 )}
-                {this.state.SelectedTerrName === "МО Коломна" && (
-                  <ChartNodes data={this.state.dataGraph["МО Коломна"]} />
+                {SelectedTerrName === "МО Коломна" && (
+                  <ChartNodes data={dataGraph["МО Коломна"]} />
                 )}
-                {this.state.SelectedTerrName === "МО Семеновский" && (
-                  <ChartNodes data={this.state.dataGraph["МО Семеновский"]} />
+                {SelectedTerrName === "МО Семеновский" && (
+                  <ChartNodes data={dataGraph["МО Семеновский"]} />
                 )}
-                {this.state.SelectedTerrName === "МО Сенной" && (
-                  <ChartNodes data={this.state.dataGraph["МО Сенной"]} />
+                {SelectedTerrName === "МО Сенной" && (
+                  <ChartNodes data={dataGraph["МО Сенной"]} />
                 )}
-                {this.state.SelectedTerrName === "Василеостровский район" && (
+                {SelectedTerrName === "Василеостровский район" && (
                   <ChartNodes
-                    data={this.state.dataGraph["Василеостровский район"]}
+                    data={dataGraph["Василеостровский район"]}
                   />
                 )}
-                {this.state.SelectedTerrName === "7-й муниципальный округ" && (
+                {SelectedTerrName === "7-й муниципальный округ" && (
                   <ChartNodes
-                    data={this.state.dataGraph["7-й муниципальный округ"]}
+                    data={dataGraph["7-й муниципальный округ"]}
                   />
                 )}
-                {this.state.SelectedTerrName === "МО Васильевский" && (
-                  <ChartNodes data={this.state.dataGraph["МО Васильевский"]} />
+                {SelectedTerrName === "МО Васильевский" && (
+                  <ChartNodes data={dataGraph["МО Васильевский"]} />
                 )}
-                {this.state.SelectedTerrName === "МО Гавань" && (
-                  <ChartNodes data={this.state.dataGraph["МО Гавань"]} />
+                {SelectedTerrName === "МО Гавань" && (
+                  <ChartNodes data={dataGraph["МО Гавань"]} />
                 )}
-                {this.state.SelectedTerrName === "МО Морской" && (
-                  <ChartNodes data={this.state.dataGraph["МО Морской"]} />
+                {SelectedTerrName === "МО Морской" && (
+                  <ChartNodes data={dataGraph["МО Морской"]} />
                 )}
-                {this.state.SelectedTerrName === "МО Остров Декабристов" && (
+                {SelectedTerrName === "МО Остров Декабристов" && (
                   <ChartNodes
-                    data={this.state.dataGraph["МО Остров Декабристов"]}
+                    data={dataGraph["МО Остров Декабристов"]}
                   />
                 )}
                 <br />
@@ -216,50 +208,50 @@ class MapIs extends React.Component {
                 <h3 class="heading-sidebar is-size-6 has-text-grey-dark">
                   Значимость сервисов
                 </h3>
-                {this.state.SelectedTerrName === "Санкт-Петербург" && (
+                {SelectedTerrName === "Санкт-Петербург" && (
                   <TableSocial terrName="Санкт-Петербург" />
                 )}
-                {this.state.SelectedTerrName === "Адмиралтейский район" && (
+                {SelectedTerrName === "Адмиралтейский район" && (
                   <TableSocial terrName="Адмиралтейский район" />
                 )}
-                {this.state.SelectedTerrName === "МО Адмиралтейский" && (
+                {SelectedTerrName === "МО Адмиралтейский" && (
                   <TableSocial terrName="МО Адмиралтейский" />
                 )}
-                {this.state.SelectedTerrName === "МО Екатерингофский" && (
+                {SelectedTerrName === "МО Екатерингофский" && (
                   <TableSocial terrName="МО Екатерингофский" />
                 )}
-                {this.state.SelectedTerrName === "МО Измайловский" && (
+                {SelectedTerrName === "МО Измайловский" && (
                   <TableSocial terrName="МО Измайловский" />
                 )}
-                {this.state.SelectedTerrName === "МО Коломна" && (
+                {SelectedTerrName === "МО Коломна" && (
                   <TableSocial terrName="МО Коломна" />
                 )}
-                {this.state.SelectedTerrName === "МО Семеновский" && (
+                {SelectedTerrName === "МО Семеновский" && (
                   <TableSocial terrName="МО Семеновский" />
                 )}
-                {this.state.SelectedTerrName === "МО Сенной" && (
+                {SelectedTerrName === "МО Сенной" && (
                   <TableSocial terrName="МО Сенной" />
                 )}
-                {this.state.SelectedTerrName === "Василеостровский район" && (
+                {SelectedTerrName === "Василеостровский район" && (
                   <TableSocial terrName="Василеостровский район" />
                 )}
-                {this.state.SelectedTerrName === "7-й муниципальный округ" && (
+                {SelectedTerrName === "7-й муниципальный округ" && (
                   <TableSocial terrName="7-й муниципальный округ" />
                 )}
-                {this.state.SelectedTerrName === "МО Васильевский" && (
+                {SelectedTerrName === "МО Васильевский" && (
                   <TableSocial terrName="МО Васильевский" />
                 )}
-                {this.state.SelectedTerrName === "МО Гавань" && (
+                {SelectedTerrName === "МО Гавань" && (
                   <TableSocial terrName="МО Гавань" />
                 )}
-                {this.state.SelectedTerrName === "МО Морской" && (
+                {SelectedTerrName === "МО Морской" && (
                   <TableSocial terrName="МО Морской" />
                 )}
-                {this.state.SelectedTerrName === "МО Остров Декабристов" && (
+                {SelectedTerrName === "МО Остров Декабристов" && (
                   <TableSocial terrName="МО Остров Декабристов" />
                 )}
                 <br />
-                {/* {this.state.DataGroups.map((data) => data.groups.name)} */}
+                {/* {DataGroups.map((data) => data.groups.name)} */}
                 <br />
               </div>
             </div>
@@ -267,7 +259,6 @@ class MapIs extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 export default MapIs;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Accordion,
@@ -7,25 +7,23 @@ import {
   AccordionPanel,
 } from "@reach/accordion";
 import "@reach/accordion/styles.css";
-class TableSocial extends React.Component {
-  state = {
-    dataGraph: [],
-    selectedSocial: [],
+
+function TableSocial(props) {
+
+  const [dataGraph, setDataGraph] = useState([]);
+  const [selectedSocial, setSelectedSocial] = useState([]);
+
+  const selectedSocialF = (e) => {
+    setSelectedSocial(e.target.value);
   };
 
-  selectedSocial = (e) => {
-    this.setState({ selectedSocial: e.target.value });
-  };
-
-  componentDidMount() {
+  useEffect(() => {
     axios.get("./AllCharts.json").then((res) => {
-      const dataGraph = res.data[this.props.terrName].nodes;
-      this.setState({ dataGraph });
+      setDataGraph(res.data[props.terrName].nodes);
     });
-  }
+  });
 
-  render() {
-    console.log(this.state.selectedSocial);
+    console.log(selectedSocial);
     return (
       <Accordion>
         <AccordionItem>
@@ -36,12 +34,12 @@ class TableSocial extends React.Component {
             </AccordionButton>
           </h3>
           <AccordionPanel>
-            {this.state.dataGraph.map((data, id) => (
+            {dataGraph.map((data, id) => (
               <div class="container">
                 <br />
                 <ul>
                   <li
-                    onClick={this.selectedSocial}
+                    onClick={selectedSocialF}
                     class="list-item-table is-size-7 has-text-weight-semibold	socilagropusliislables "
                     value={data.id}
                   >
@@ -61,7 +59,7 @@ class TableSocial extends React.Component {
             </AccordionButton>
           </h3>
           <AccordionPanel>
-            {this.state.dataGraph.map((data, id) => (
+            {dataGraph.map((data, id) => (
               <div class="container">
                 <br />
                 <ul>
@@ -188,7 +186,6 @@ class TableSocial extends React.Component {
         </table> */
       // </div>
     );
-  }
 }
 
 export default TableSocial;

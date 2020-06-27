@@ -276,59 +276,59 @@ class MapIs extends React.Component {
                 {this.state.DistrictGeoJsonVisible && (
                   <div className="population-color-tags has-text-weight-bold">
                     <p>Население Районов</p>
-                    <span class="tag is-dist-2000">> 500K</span>
-                    <span class="tag is-dist-1000">> 300K</span>
-                    <span class="tag is-dist-500">> 200K</span>
-                    <span class="tag is-dist-300">> 100K</span>
-                    <span class="tag is-dist-100">> 50K</span>
-                    <span class="tag is-dist-50">> 10K</span>
+                    <span class="tag is-dist-2000"> 500K</span>
+                    <span class="tag is-dist-1000"> 300K</span>
+                    <span class="tag is-dist-500"> 200K</span>
+                    <span class="tag is-dist-300"> 100K</span>
+                    <span class="tag is-dist-100"> 50K</span>
+                    <span class="tag is-dist-50"> 10K</span>
                   </div>
                 )}
                 {this.state.MoGeoJsonVisible && (
                   <div className="population-color-tags has-text-weight-bold">
                     <p>Население МО</p>
-                    <span class="tag is-mo-2000">> 25000</span>
-                    <span class="tag is-mo-1000">> 20000</span>
-                    <span class="tag is-mo-500">> 10000</span>
-                    <span class="tag is-mo-300">> 5000</span>
-                    <span class="tag is-mo-100">> 1000</span>
-                    <span class="tag is-mo-50">> 500</span>
+                    <span class="tag is-mo-2000"> 25000</span>
+                    <span class="tag is-mo-1000"> 20000</span>
+                    <span class="tag is-mo-500"> 10000</span>
+                    <span class="tag is-mo-300"> 5000</span>
+                    <span class="tag is-mo-100"> 1000</span>
+                    <span class="tag is-mo-50"> 500</span>
                   </div>
                 )}
                 {this.state.MOGeoJsonVisibleIndividual &&
                   this.state.DistrictGeoJsonVisibleIndividual == false && (
                     <div className="population-color-tags has-text-weight-bold">
                       <p>Население Домов</p>
-                      <span class="tag is-mo-2000">> 2000</span>
-                      <span class="tag is-mo-1000">> 1000</span>
-                      <span class="tag is-mo-500">> 500</span>
-                      <span class="tag is-mo-300">> 300</span>
-                      <span class="tag is-mo-100">> 200</span>
-                      <span class="tag is-mo-50">> 100</span>
+                      <span class="tag is-mo-2000"> 2000</span>
+                      <span class="tag is-mo-1000"> 1000</span>
+                      <span class="tag is-mo-500"> 500</span>
+                      <span class="tag is-mo-300"> 300</span>
+                      <span class="tag is-mo-100"> 200</span>
+                      <span class="tag is-mo-50"> 100</span>
                     </div>
                   )}
                 {this.state.DistrictGeoJsonVisibleIndividual &&
                   this.state.MOGeoJsonVisibleIndividual === false && (
                     <div className="population-color-tags has-text-weight-bold">
                       <p>Население Домов</p>
-                      <span class="tag is-mo-2000">> 2000</span>
-                      <span class="tag is-mo-1000">> 1000</span>
-                      <span class="tag is-mo-500">> 500</span>
-                      <span class="tag is-mo-300">> 300</span>
-                      <span class="tag is-mo-100">> 200</span>
-                      <span class="tag is-mo-50">> 100</span>
+                      <span class="tag is-mo-2000"> 2000</span>
+                      <span class="tag is-mo-1000"> 1000</span>
+                      <span class="tag is-mo-500"> 500</span>
+                      <span class="tag is-mo-300"> 300</span>
+                      <span class="tag is-mo-100"> 200</span>
+                      <span class="tag is-mo-50"> 100</span>
                     </div>
                   )}
                 {this.state.DistrictGeoJsonVisibleIndividual &&
                   this.state.MOGeoJsonVisibleIndividual && (
                     <div className="population-color-tags has-text-weight-bold">
                       <p>Население Домов</p>
-                      <span class="tag is-mo-2000">> 2000</span>
-                      <span class="tag is-mo-1000">> 1000</span>
-                      <span class="tag is-mo-500">> 500</span>
-                      <span class="tag is-mo-300">> 300</span>
-                      <span class="tag is-mo-100">> 200</span>
-                      <span class="tag is-mo-50">> 100</span>
+                      <span class="tag is-mo-2000"> 2000</span>
+                      <span class="tag is-mo-1000"> 1000</span>
+                      <span class="tag is-mo-500"> 500</span>
+                      <span class="tag is-mo-300"> 300</span>
+                      <span class="tag is-mo-100"> 200</span>
+                      <span class="tag is-mo-50"> 100</span>
                     </div>
                   )}
               </div>

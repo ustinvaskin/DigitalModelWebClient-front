@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GeoJSON, FeatureGroup, Popup } from "react-leaflet";
 import axios from "axios";
 
-export default class GeojsonLayer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      art_spaces: [],
-    };
-  }
+function GeojsonLayer(props) {
+    const [art_spaces, setArt_Spaces] = useState([]);
 
-  myStyle = () => {
+  const myStyle = () => {
     return {
       fillColor: "red",
       weight: 2,
@@ -21,18 +16,16 @@ export default class GeojsonLayer extends React.Component {
     };
   };
 
-  componentDidMount() {
-    axios.get(this.props.url).then((res) => {
-      const art_spaces = res.data._embedded.art_spaces;
-      this.setState({ art_spaces });
+  useEffect(() => {
+    axios.get(props.url).then((res) => {
+      setArt_Spaces(res.data._embedded.art_spaces);
     });
-  }
+  });
 
-  render() {
-    console.log(this.state.art_spaces);
+    console.log(art_spaces);
     return (
       <FeatureGroup>
-        {this.state.art_spaces.map((art_space) => {
+        {art_spaces.map((art_space) => {
           this.style = (feature) => {
             return {
               color: "red",
@@ -57,5 +50,6 @@ export default class GeojsonLayer extends React.Component {
         })}
       </FeatureGroup>
     );
-  }
 }
+
+export default GeojsonLayer;

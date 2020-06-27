@@ -2,9 +2,7 @@ import Graph from "react-graph-vis";
 
 import React from "react";
 
-class ChartSPB extends React.Component {
-  state = {};
-  render() {
+function ChartSPB(props) {
     const options = {
       layout: {
         randomSeed: true,
@@ -54,13 +52,12 @@ class ChartSPB extends React.Component {
 
     return (
       <Graph
-        graph={this.props.data}
+        graph={props.data}
         options={options}
         events={events}
         style={{ height: "640px" }}
       />
     );
-  }
 }
 
 export default ChartSPB;

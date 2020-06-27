@@ -1,19 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Main from "./Main";
 
-class ModelPopulationDescription extends React.Component {
-  state = {};
+function ModelPopulationDescription() {
 
   // To scroll up back again
-  componentDidMount() {
-    {
+  useEffect(() => {
       window.scrollTo(0, 0);
-    }
-  }
-  render() {
-    return <Main />;
-  }
+  });
+  return <Main />;
 }
 
 export default ModelPopulationDescription;

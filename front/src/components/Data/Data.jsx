@@ -160,9 +160,9 @@ class Data extends React.Component {
                         </div>
 
                         <ul class="dataset-resources unstyled">
-                          <button onClick={this.downloadEmployeeData}>
+                          <a download href="http://sportpetergof.ru/attachments/article/1750/409.pdf"><button onClick={this.downloadEmployeeData}>
                             Download
-                          </button>
+                          </button></a>
 
                           <a href="#">
                             <button class="button is-danger is-outlined">
@@ -194,13 +194,14 @@ class Data extends React.Component {
                         </div>
 
                         <ul class="dataset-resources unstyled">
-                          <Link
+                          {/* <Link
                             to="/files/gas_stations.geojson"
                             target="_blank"
                             download="gas_stations.geojson"
                           >
                             Download
-                          </Link>
+                          </Link> */}
+                          <a href="/files/gas_stations.geojson" download>Download</a>
 
                           <a href="#">
                             <button class="button is-danger is-outlined">

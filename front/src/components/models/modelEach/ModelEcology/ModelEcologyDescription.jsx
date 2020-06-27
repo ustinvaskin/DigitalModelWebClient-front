@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-class ModelEcologyDescription extends React.Component {
-  state = {};
+function ModelEcologyDescription() {
 
   // To scroll up back again
-  componentDidMount() {
-    {
+  useEffect(() => {
       window.scrollTo(0, 0);
-    }
-  }
+  })
 
-  render() {
     return (
       <div>
         <br />
@@ -152,7 +148,6 @@ class ModelEcologyDescription extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 export default ModelEcologyDescription;

@@ -1,491 +1,176 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
-import { Map, Popup, Marker, TileLayer } from "react-leaflet";
 import L from "leaflet";
 
 import ArtSpaceGeoJsonVisible from "./GeoJsonLayers/ArtSpaceGeoJsonVisible";
 import DistrictsGeoJSONLayer from "./GeoJsonLayers/DistrictGeoJsonLayer";
 import MOGeojsonLayer from "./GeoJsonLayers/MOGeoJsonLayer";
-import { Link } from "react-router-dom";
 import "./Styles/styles.css";
-import Basemap from "./BaseMap";
 
-class DataShowInterface extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [],
+function DataShowInterface() {
+  // Map basic info
+  const mapInfo = {
+    latLon: [59.97003, 30],
+    zoom: 8.9,
+    basemap: "osm"
+  };
 
-      // Map basic info
-      latLon: [59.97003, 30],
-      zoom: 8.9,
-      basemap: "osm",
-      schools: [],
-      churches: [],
-      cemeteries: [],
-      charging_stations: [],
-      kindergartens: [],
-      art_spaces: [],
-      colleges: [],
-      universities: [],
-      onShowChurhces: false,
-      onShowSchools: false,
-      onShowChargingStations: false,
-      onShoweCmeteries: false,
-      onShowKindergartens: false,
-      ArtSpaceGeoJsonVisible: false,
-      DistrictGeoJsonVisible: false,
-      MoGeoJsonVisible: false,
-      OnShowColleges: false,
-      onShowUni: false,
-      // List of names for select/option
+  const onShow = {
+    ArtSpaceGeoJsonVisible: false,
+    DistrictGeoJsonVisible: false,
+    MoGeoJsonVisible: false,
+    // List of names for select/option
+  };
+
+  function getDatasets() {
+    let urls = [
+      {
+        url: 'schools',
+        params: {
+          size: '3'
+        }
+      },
+      {
+        url: 'churches',
+        params: {
+          size: '4'
+        }
+      },
+      {
+        url: 'charging_stations',
+        params: {
+          size: '2'
+        }
+      },
+      {
+        url: 'cemeteries',
+        params: {
+          size: '6'
+        }
+      },
+      {
+        url: 'kindergartens',
+        params: {
+          size: '7'
+        }
+      },
+      {
+        url: 'colleges',
+        params: {
+          size: '8'
+        }
+      },
+      {
+        url: 'universities',
+        params: {
+          size: '9'
+        }
+      }
+    ];
+    const axiosConfig = {
+      method: 'get',
+      baseURL: `${process.env.REACT_APP_MAIN_API}/api/`
     };
+    return urls.map(url => axios(Object.assign(axiosConfig, url))
+      .then(({ data }) => data._embedded));
+  }
+  function createDatasets() {
+    let aggregatedDatasets = aggregateDatasets(rawDatasets);
+    return aggregatedDatasets;
+  }
+  async function aggregateDatasets(rawDatasets) {
+    return await Promise.allSettled(rawDatasets)
+      .then(rawDatasets => rawDatasets.reduce((accum, rawDataset) => Object.assign(accum, rawDataset.value), {}));
   }
 
-  componentDidMount() {
-    // For initial data
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/schools?size=624`)
-      .then((res) => {
-        const schools = res.data._embedded.schools;
-        this.setState({ schools });
+  const rawDatasets = getDatasets();
+
+  //useEffect(() => {
+    async function createMap() {
+      const normalizedNames = {
+        cemeteries: 'Кладбища',
+        charging_stations: 'Заправки автомобилей',
+        churches: 'Церкви',
+        colleges: 'Колледжи',
+        kindergartens: 'Детские сады',
+        schools: 'Школы',
+        universities: 'Университеты'
+      };
+      const iconForEvent = new L.Icon({
+        iconUrl: require("../../../../../img/marker.svg"),
+        iconRetinaUrl: require("../../../../../img/marker.svg"),
+        iconSize: new L.Point(30, 30),
+        className: "leaflet-div-icon",
       });
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/churches?size=245`)
-      .then((res) => {
-        const churches = res.data._embedded.churches;
-        this.setState({ churches });
-      });
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/charging_stations?size=29`)
-      .then((res) => {
-        const charging_stations = res.data._embedded.charging_stations;
-        this.setState({ charging_stations });
-      });
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/cemeteries?size=40`)
-      .then((res) => {
-        const cemeteries = res.data._embedded.cemeteries;
-        this.setState({ cemeteries });
-      });
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/kindergartens?size=964`)
-      .then((res) => {
-        const kindergartens = res.data._embedded.kindergartens;
-        this.setState({ kindergartens });
-      });
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/colleges?size=101`)
-      .then((res) => {
-        const colleges = res.data._embedded.colleges;
-        this.setState({ colleges });
-      });
-    axios
-      .get(`${process.env.REACT_APP_MAIN_API}/api/universities?size=135`)
-      .then((res) => {
-        const universities = res.data._embedded.universities;
-        this.setState({ universities });
-      });
-  }
-  // Change tilelayer
-  onBMChange = (bm) => {
-    console.log(this);
-    this.setState({
-      basemap: bm,
-    });
-  };
+      const basemapsDict = {
+        osm: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        hot: "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+        dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
+        cycle: "https://dev.{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png",
+      };
+      let baseMaps = {
+        "OSM": L.tileLayer(basemapsDict.osm, {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }),
+        "OSM HOT": L.tileLayer(basemapsDict.hot, {
+          attribution: ''
+        }),
+        "DARK": L.tileLayer(basemapsDict.dark, {
+          attribution: ''
+        }),
+        "CYCLE MAP": L.tileLayer(basemapsDict.cycle, {
+          attribution: ''
+        })
+      };
 
-  onShowSchools = (e) => {
-    this.setState({
-      onShowSchools: e.currentTarget.checked,
-    });
-  };
+      function getLayerGroups(datasets) {
+        return Object.keys(datasets)
+          .reduce((accum, key) => {
+            let markers = datasets[key].map(point => {
+              return L.marker(point.geometry.coordinates.reverse(), { icon: iconForEvent }).bindPopup(point.name);
+            })
+            return Object.assign(accum, { [key]: L.layerGroup(markers) });
+          }, {});
+      }
 
-  onShowChurhces = (e) => {
-    this.setState({
-      onShowChurhces: e.currentTarget.checked,
-    });
-  };
+      let datasets = await createDatasets();
+      let layerGroups = getLayerGroups(datasets);
+      const mapOptions = { layers: [baseMaps.OSM, layerGroups.schools] };
+      let map = L.map('map', mapOptions).setView(mapInfo.latLon, mapInfo.zoom);
+      L.control.layers(baseMaps, layerGroups).addTo(map);
+      return map;
+    }
+    let map = createMap();
+ // });
 
-  onShowChargingStations = (e) => {
-    this.setState({
-      onShowChargingStations: e.currentTarget.checked,
-    });
-  };
+  return (
+    <div id="map">
 
-  onShoweCmeteries = (e) => {
-    this.setState({
-      onShoweCmeteries: e.currentTarget.checked,
-    });
-  };
+      {0 && (
+        <ArtSpaceGeoJsonVisible
+          url={`${process.env.REACT_APP_MAIN_API}/api/art_spaces`}
+        />
+      )}
+      {/* Districts */}
+      {0 && (
+        <DistrictsGeoJSONLayer
+          // url={`districts/search/findByName?name=Петродворцовый`}
+          url={`${process.env.REACT_APP_MAIN_API}/api/districts`}
+          terr={`${process.env.REACT_APP_MAIN_API}/api/districts`}
+        />
+      )}
 
-  onShowKindergartens = (e) => {
-    this.setState({
-      onShowKindergartens: e.currentTarget.checked,
-    });
-  };
+      {/* Show MO */}
 
-  OnShowColleges = (e) => {
-    this.setState({
-      OnShowColleges: e.currentTarget.checked,
-    });
-  };
-
-  onShowUni = (e) => {
-    this.setState({
-      onShowUni: e.currentTarget.checked,
-    });
-  };
-
-  onShowArtSpaces = (e) => {
-    this.setState({
-      ArtSpaceGeoJsonVisible: !this.state.ArtSpaceGeoJsonVisible,
-    });
-  };
-
-  onDistrictGEOJSON = (e) => {
-    this.setState({
-      DistrictGeoJsonVisible: e.currentTarget.checked,
-    });
-  };
-
-  onMOGeojsonToggle = (e) => {
-    this.setState({
-      MoGeoJsonVisible: e.currentTarget.checked,
-      DistrictGeoJsonVisible: false,
-    });
-  };
-  render() {
-    console.log(process.env.REACT_APP_MAIN_API);
-    console.log(this.state.cemeteries);
-    const basemapsDict = {
-      osm: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      hot: "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-      dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-      cycle: "https://dev.{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png",
-    };
-
-    const iconForEvent = new L.Icon({
-      iconUrl: require("../../../../../img/marker.svg"),
-      iconRetinaUrl: require("../../../../../img/marker.svg"),
-      iconSize: new L.Point(30, 30),
-      className: "leaflet-div-icon",
-    });
-    console.log(this.state.charging_stations);
-
-    return (
-      <div>
-        <br />
-        <br />
-        <br />
-        {/* Breadcrumbs */}
-        <div className="breadcrumbs">
-          <nav
-            class=" breadcrumb has-arrow-separator is-centered"
-            aria-label="breadcrumbs"
-          >
-            <ul>
-              <li>
-                <a href="#">Главная</a>
-              </li>
-              <li>
-                <Link to="/data">Данные</Link>
-              </li>
-              <li class="is-active">
-                <a href="#" aria-current="page">
-                  Просмотр данных
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        {/* END OF _____Breadcrumbs */}
-        <div class="page-content container">
-          <div class="wrapper">
-            <div class="row">
-              {/* Aside Left */}
-              {/* Aside Left Name */}
-              <div class="sidebar col-md-3 col-sm-12 col-xs-12">
-                <h3 class="heading-sidebar is-size-4">Просмотр данных</h3>
-                {/* END OF ___Aside Left Name */}
-                {/* Choose Territiry checkboxes */}
-                <ul>
-                  <li class="sidebar-item is-size-6">
-                    <div className=" has-text-left is-choose-territory">
-                      <h3 class="heading-sidebar is-size-6 ">
-                        Выберите территорию
-                      </h3>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col-md-6 col-sm-12 col-xs-12 news-content">
-                <div className="leaflet-container leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom">
-                  <Map center={this.state.latLon} zoom={this.state.zoom}>
-                    <TileLayer
-                      url={basemapsDict[this.state.basemap]}
-                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    />
-                    {/* // Show Schools  */}
-                    {this.state.onShowSchools &&
-                      this.state.schools.map((school) => {
-                        return (
-                          <Marker
-                            key={school.name}
-                            position={school.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{school.name}</p>
-                              <p>{school.address}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-                    {/* // Show Churhces  */}
-                    {this.state.onShowChurhces &&
-                      this.state.churches.map((church) => {
-                        return (
-                          <Marker
-                            key={church.name}
-                            position={church.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{church.name}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-                    {/* // Show Charging Stations  */}
-                    {this.state.onShowChargingStations &&
-                      this.state.charging_stations.map((chargStat) => {
-                        return (
-                          <Marker
-                            key={chargStat.name}
-                            position={chargStat.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{chargStat.name}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-                    {/* // Show Charging Cemeteries  */}
-                    {this.state.onShoweCmeteries &&
-                      this.state.cemeteries.map((cemetery) => {
-                        return (
-                          <Marker
-                            key={cemetery.name}
-                            position={cemetery.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{cemetery.name}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-                    {/* // Show Charging Kindergartens  */}
-                    {this.state.onShowKindergartens &&
-                      this.state.kindergartens.map((kindergarten) => {
-                        return (
-                          <Marker
-                            key={kindergarten.name}
-                            position={kindergarten.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{kindergarten.name}</p>
-                              <p>{kindergarten.address}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-
-                    {/* // Show Charging Art Spaces  */}
-                    {this.state.ArtSpaceGeoJsonVisible && (
-                      <ArtSpaceGeoJsonVisible
-                        url={`${process.env.REACT_APP_MAIN_API}/api/art_spaces`}
-                      />
-                    )}
-                    {/* Districts */}
-                    {this.state.DistrictGeoJsonVisible && (
-                      <DistrictsGeoJSONLayer
-                        // url={`districts/search/findByName?name=Петродворцовый`}
-                        url={`${process.env.REACT_APP_MAIN_API}/api/districts`}
-                        terr={`${process.env.REACT_APP_MAIN_API}/api/districts`}
-                      />
-                    )}
-
-                    {/* Show MO */}
-
-                    {this.state.MoGeoJsonVisible && (
-                      <MOGeojsonLayer
-                        url={`${process.env.REACT_APP_MAIN_API}/api/municipalities/?size=111`}
-                        terr={`${process.env.REACT_APP_MAIN_API}/api/municipalities`}
-                      />
-                    )}
-
-                    {/* Show Colleges Marker  */}
-                    {this.state.OnShowColleges &&
-                      this.state.colleges.map((college) => {
-                        return (
-                          <Marker
-                            key={college.name}
-                            position={college.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{college.name}</p>
-                              <p>{college.address}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-
-                    {/* Marker Uni  */}
-                    {this.state.onShowUni &&
-                      this.state.universities.map((university) => {
-                        return (
-                          <Marker
-                            key={university.name}
-                            position={university.geometry.coordinates}
-                            icon={iconForEvent}
-                          >
-                            <Popup>
-                              <p>{university.name}</p>
-                              <p>{university.address}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })}
-                    {/* BaseMap Component */}
-                    <Basemap
-                      basemap={this.state.basemap}
-                      onChange={this.onBMChange}
-                    />
-                    {/* // Layess on button clikc  */}
-                  </Map>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 col-xs-12 news-content">
-                <p class="heading-sidebar is-size-5">Набор Данных</p>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="schools"
-                    id="schools"
-                    value={this.state.schools}
-                    onChange={this.onShowSchools}
-                  />
-                  <label htmlFor="schools">Школы </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="churches"
-                    id="churches"
-                    value={this.state.churches}
-                    onChange={this.onShowChurhces}
-                  />
-                  <label htmlFor="churches">Церкви </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="charging_stations"
-                    id="charging_stations"
-                    value={this.state.charging_stations}
-                    onChange={this.onShowChargingStations}
-                  />
-                  <label htmlFor="charging_stations">
-                    {" "}
-                    Заправки электромобилей{" "}
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="Cemeteries"
-                    id="Cemeteries"
-                    value={this.state.cemeteries}
-                    onChange={this.onShoweCmeteries}
-                  />
-                  <label htmlFor="Cemeteries">Кладбища </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="Kindergartens"
-                    id="Kindergartens"
-                    value={this.state.kindergartens}
-                    onChange={this.onShowKindergartens}
-                  />
-                  <label htmlFor="Kindergartens">Детские сады </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="art_spaces"
-                    id="art_spaces"
-                    value={this.state.ArtSpaceGeoJsonVisible}
-                    onChange={this.onShowArtSpaces}
-                  />
-                  <label htmlFor="art_spaces">Арт площадки </label>
-                </div>
-
-                <div>
-                  <input
-                    type="checkbox"
-                    name="District"
-                    id="District"
-                    value={this.state.onDistrictGEOJSON}
-                    onChange={this.onDistrictGEOJSON}
-                  />
-                  <label htmlFor="District">Районы </label>
-                </div>
-
-                <div>
-                  <input
-                    type="checkbox"
-                    name="MO"
-                    id="MO"
-                    value={this.state.onMOGeojsonToggle}
-                    onChange={this.onMOGeojsonToggle}
-                  />
-                  <label htmlFor="MO">МО </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="colleges"
-                    id="colleges"
-                    value={this.state.colleges}
-                    onChange={this.OnShowColleges}
-                  />
-                  <label htmlFor="colleges">Колледжи </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="universities"
-                    id="universities"
-                    value={this.state.universities}
-                    onChange={this.onShowUni}
-                  />
-                  <label htmlFor="universities">Университеты </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+      {0 && (
+        <MOGeojsonLayer
+          url={`${process.env.REACT_APP_MAIN_API}/api/municipalities/?size=111`}
+          terr={`${process.env.REACT_APP_MAIN_API}/api/municipalities`}
+        />
+      )}
+    </div>);
 }
+
 export default DataShowInterface;
 
 // Записи

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, setState, useEffect } from "react";
 import axios from "axios";
 import {
   Accordion,
@@ -7,21 +7,18 @@ import {
   AccordionPanel,
 } from "@reach/accordion";
 import "./node_modules/@reach/accordion/styles.css";
-class TableSocial extends React.Component {
-  state = {
-    dataGraph: [],
-  };
+function TableSocial(props) {
 
-  componentDidMount() {
+  const [dataGraph, setDataGraph] = useState([]);
+
+  useEffect(() => {
     axios.get("./AllCharts.json").then((res) => {
-      const dataGraph = res.data[this.props.terrName].nodes;
-      this.setState({ dataGraph });
+      setDataGraph(res.data[props.terrName].nodes);
     });
-  }
+  })
 
-  render() {
-    console.log(this.state.dataGraph[0]);
-    console.log(`this is ingo ${this.state.dataGraph}`);
+    console.log(dataGraph[0]);
+    console.log(`this is ingo ${dataGraph}`);
     return (
       <Accordion>
         <AccordionItem>
@@ -32,7 +29,7 @@ class TableSocial extends React.Component {
             </AccordionButton>
           </h3>
           <AccordionPanel>
-            {this.state.dataGraph.map((data, id) => (
+            {dataGraph.map((data, id) => (
               <div class="container">
                 <br />
                 <ul>
@@ -183,7 +180,6 @@ class TableSocial extends React.Component {
         </table> */
       // </div>
     );
-  }
 }
 
 export default TableSocial;
