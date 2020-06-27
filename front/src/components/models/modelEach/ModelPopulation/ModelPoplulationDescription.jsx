@@ -172,9 +172,12 @@ class ModelPopulationDescription extends React.Component {
                     <span class="panel-icon"></span>
                     Ссылка на исходный код модели
                   </a>
-                  <a class="panel-block">
+                  <a
+                    class="panel-block"
+                    href="http://77.234.203.187:17026/api/downloads/Описние_модели_расселения_населения.pdf"
+                  >
                     <span class="panel-icon"></span>
-                    Описание модели
+                    Описние модели расселения населения
                   </a>
                   <a class="panel-block">
                     <span class="panel-icon"></span>
