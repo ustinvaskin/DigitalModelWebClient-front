@@ -113,6 +113,8 @@ class MainEvents extends React.Component {
       className: "leaflet-div-icon",
     });
 
+    console.log(this.state.events);
+
     return (
       <div>
         <br />

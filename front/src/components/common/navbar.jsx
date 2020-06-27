@@ -110,7 +110,7 @@ class Navbar extends React.Component {
                     </li>
                   </ul>
                 </li>
-                <li class="has-subnav">
+                {/* <li class="has-subnav">
                   <a href="#" title="Analytics">
                     Вопросы
                   </a>
@@ -130,7 +130,7 @@ class Navbar extends React.Component {
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
 
                 {/* <li class="has-subnav">
                   <a href="#" title="News">
