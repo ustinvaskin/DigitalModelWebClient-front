@@ -22,12 +22,18 @@ function DataShowInterface() {
     // List of names for select/option
   };
 
-  function getDatasets() {
+  async function getDatasets() {
     let urls = [
       {
-        url: 'schools',
+        url: '/schools/search/findByGeometryType',
         params: {
-          size: '3'
+          type: 'ST_Point'
+        }
+      },
+      {
+        url: '/schools/search/findByGeometryType',
+        params: {
+          type: 'ST_Polygon'
         }
       },
       {
@@ -41,7 +47,7 @@ function DataShowInterface() {
         params: {
           size: '2'
         }
-      },
+      }/*,
       {
         url: 'cemeteries',
         params: {
@@ -65,17 +71,20 @@ function DataShowInterface() {
         params: {
           size: '9'
         }
-      }
+      }*/
     ];
     const axiosConfig = {
       method: 'get',
       baseURL: `${process.env.REACT_APP_MAIN_API}/api/`
     };
-    return urls.map(url => axios(Object.assign(axiosConfig, url))
+    let foo = urls.map(url => axios(Object.assign(axiosConfig, url))
       .then(({ data }) => data._embedded));
+      console.log(await Promise.allSettled(foo))
+    return foo;
   }
-  function createDatasets() {
+  async function createDatasets() {
     let aggregatedDatasets = aggregateDatasets(rawDatasets);
+    console.log(await aggregatedDatasets);
     return aggregatedDatasets;
   }
   async function aggregateDatasets(rawDatasets) {
@@ -127,8 +136,14 @@ function DataShowInterface() {
         return Object.keys(datasets)
           .reduce((accum, key) => {
             let markers = datasets[key].map(point => {
-              return L.marker(point.geometry.coordinates.reverse(), { icon: iconForEvent }).bindPopup(point.name);
-            })
+              if (point.geometry.type == "Polygon") {
+                let reversedCoords = point.geometry.coordinates[0].map(coord => coord.reverse());
+                return L.polygon(reversedCoords, {color: 'red'});
+              }
+              if (point.geometry.type == "Point") {
+                return L.marker(point.geometry.coordinates.reverse(), { icon: iconForEvent }).bindPopup(point.name);
+              }
+            });
             return Object.assign(accum, { [key]: L.layerGroup(markers) });
           }, {});
       }
