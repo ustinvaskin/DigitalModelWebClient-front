@@ -96,7 +96,6 @@ class MainEvents extends React.Component {
   };
 
   // Getting data from API
-
   // To change basemaplayer
   render() {
     const basemapsDict = {

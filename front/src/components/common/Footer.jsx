@@ -12,11 +12,6 @@ class Footer extends React.Component {
             <div class="column">
               <div class="footer-column">
                 <div class="footer-header">
-                  <h3 className="has-text-weight-bold is-size-5	">Модели</h3>
-                </div>
-                <br />
-
-                <div class="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Данные</h3>
                 </div>
                 <br />
@@ -42,10 +37,14 @@ class Footer extends React.Component {
                     <Link to="/dataInterface">Просмотр данных</Link>
                   </li>
                 </ul>
-
+              </div>
+            </div>
+            <div class="column">
+              <div class="footer-column">
+                <div class="footer-header">
+                  <h3 className="has-text-weight-bold is-size-5	">Модели</h3>
+                </div>
                 <br />
-                <br />
-
                 <ul class="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <Link to="/models">Модели</Link>
@@ -74,7 +73,7 @@ class Footer extends React.Component {
                   </li>
                   <li>
                     <Link to="/InterfaceHumanSociety">
-                      Модель лояльность населения к умному городу
+                      Модель жизни в умном городе
                     </Link>
                   </li>
                   <li>
@@ -87,14 +86,10 @@ class Footer extends React.Component {
                     <Link to="/transport">Транспортная доступность</Link>
                   </li>
                 </ul>
-              </div>
-            </div>
-            <div class="column">
-              <div class="footer-column">
-                <div class="footer-header">
+                {/* <div class="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Новости</h3>
-                </div>
-                <br />
+                </div> */}
+                {/* <br />
                 <ul class="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <a href="/">Новости </a>
@@ -102,19 +97,18 @@ class Footer extends React.Component {
                   <li>
                     <a href="/">Статьи </a>
                   </li>
-                </ul>
-                <br />
-                <br />
-                <div class="footer-header">
+                </ul> */}
+
+                {/* <div class="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Вопросы</h3>
-                </div>
-                <br />
+                </div> */}
+                {/* <br />
                 <ul class="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <a href="/">Вопросы </a>
                   </li>
                   <li>
-                    <a href="/">Каталог вопросов </a>
+                    <a href="/">Каталог вопросы </a>
                   </li>
                   <li>
                     <a href="/">Интерактив </a>
@@ -127,12 +121,11 @@ class Footer extends React.Component {
                   </li>
                 </ul>
                 <br />
-                <br />
+                <br /> */}
               </div>
             </div>
-
             <div class="column">
-              <div class="footer-column">
+              {/* <div class="footer-column">
                 <div class="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Бизнес</h3>
                 </div>
@@ -151,8 +144,8 @@ class Footer extends React.Component {
                     <a href="/">Целевые аудитории </a>
                   </li>
                 </ul>
-              </div>
-              <br />
+              </div> */}
+
               <div class="footer-column">
                 <div class="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">О нас</h3>

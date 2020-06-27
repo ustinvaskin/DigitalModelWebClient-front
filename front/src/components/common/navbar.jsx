@@ -87,7 +87,7 @@ class Navbar extends React.Component {
                     <li class="">
                       <Link to="/humansosciety" title="Search data">
                         <span class="fa fa-long-arrow-right"></span>
-                        Лояльность населения к умному городу
+                        Модель жизни в умном городе{" "}
                       </Link>
                     </li>
                     <li class="">
