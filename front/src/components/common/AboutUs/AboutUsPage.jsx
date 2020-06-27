@@ -268,23 +268,51 @@ class AboutUspPage extends React.Component {
                   </div>
                 </div>
                 {/* //Data and Resorses  */}
-                <header class="card-header">
-                  <p class="card-header-title is-size-4">Данные и Ресурсы</p>
-                </header>
-                <div class="card-content">
-                  <div class="columns">
-                    <div class="column">
-                      <span>
-                        <span>Презентация</span>
+
+                <div className="text-is-about">
+                  <p class="card-header-title is-size-4 has-text-centered">
+                    Материалы
+                  </p>
+                  <hr />
+                  <nav class="panel is-info">
+                    <p class="panel-heading">Данные и ресурсы</p>
+                    <a
+                      class="panel-block"
+                      href="http://77.234.203.187:17026/api/downloads/1_Концепция_Умного_города_НЦКР_25_06_2020.pdf"
+                    >
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
                       </span>
-                    </div>
-                    <div class="column">
-                      <button class="button btn-is-download is-rounded is-link ">
-                        Скачать
-                      </button>
-                    </div>
-                  </div>
-                  <div class="content"></div>
+                      Концепция Умного города
+                    </a>
+                    <a
+                      class="panel-block"
+                      href="http://77.234.203.187:17026/api/downloads/НЦКР_25_06_КРУГ_Комлекс_решений.pdf"
+                    >
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      Комлекс решений
+                    </a>
+                    <a
+                      class="panel-block"
+                      href="http://77.234.203.187:17026/api/downloads/НЦКР_25_06_КРУГ_Платформа_лояльности.pdf"
+                    >
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      Платформа лояльности
+                    </a>
+                    <a
+                      class="panel-block"
+                      href="http://77.234.203.187:17026/api/downloads/Умный_город_НЦКР.pdf"
+                    >
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      Умный город
+                    </a>
+                  </nav>
                 </div>
               </div>
             </div>
