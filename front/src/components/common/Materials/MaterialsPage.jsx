@@ -80,26 +80,38 @@ class MaterialsPage extends React.Component {
                         <p class="panel-heading">
                           1. Корпоративные стандарты НЦКР
                         </p>
-                        <a class="panel-block">
+                        <a
+                          class="panel-block"
+                          href="http://77.234.203.187:17026/api/downloads/С_ИТМО_1_Умный_город_Термины_и_определения_v_2.docx"
+                        >
                           <span class="panel-icon">
                             <i class="fas fa-book" aria-hidden="true"></i>
                           </span>
                           - Умный город. Термины и определения.
                         </a>
-                        <a class="panel-block">
+                        <a
+                          class="panel-block"
+                          href="http://77.234.203.187:17026/api/downloads/С_ИТМО_2_Онтология_Цифровой_модели_города.docx"
+                        >
                           <span class="panel-icon">
                             <i class="fas fa-book" aria-hidden="true"></i>
                           </span>
                           - Умный город. Онтологическая модель городской среды.
                           Требования к составу и содержанию.{" "}
                         </a>
-                        <a class="panel-block">
+                        <a
+                          class="panel-block"
+                          href="http://77.234.203.187:17026/api/downloads/С_ИТМО_1_Умный_город_Этапы_внедрения_v_2.docx"
+                        >
                           <span class="panel-icon">
                             <i class="fas fa-book" aria-hidden="true"></i>
                           </span>
                           - Умный город. Этапы внедрения.{" "}
                         </a>
-                        <a class="panel-block">
+                        <a
+                          class="panel-block"
+                          href="http://77.234.203.187:17026/api/downloads/С_ИТМО_1_Цифровая_модель_города_Термины_и_определения_v_3.docx"
+                        >
                           <span class="panel-icon">
                             <i class="fas fa-book" aria-hidden="true"></i>
                           </span>
@@ -109,7 +121,11 @@ class MaterialsPage extends React.Component {
 
                       <nav class="panel is-info">
                         <p class="panel-heading">2. Регламенты платформы: </p>
-                        <a class="panel-block">
+                        <a
+                          class="panel-block"
+                          href="http://77.234.203.187:17026/api/downloads/Регламент_управления_составом_данных_платформы_v3.pdf
+                          "
+                        >
                           <span class="panel-icon">
                             <i class="fas fa-book" aria-hidden="true"></i>
                           </span>

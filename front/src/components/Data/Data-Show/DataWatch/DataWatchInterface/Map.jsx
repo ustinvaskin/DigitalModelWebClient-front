@@ -25,10 +25,7 @@ function DataShowInterface() {
   function getDatasets() {
     let urls = [
       {
-        url: "schools",
-        params: {
-          size: "3",
-        },
+        url: "schools/search/findByGeometryType?type=ST_Point",
       },
       {
         url: "churches",
