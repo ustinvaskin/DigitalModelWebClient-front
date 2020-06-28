@@ -5,8 +5,6 @@ import React from "react";
 class ChartSPB extends React.Component {
   state = {};
   render() {
-    
-    console.log(this.props.data);
     const options = {
       layout: {
         randomSeed: true,
@@ -53,6 +51,7 @@ class ChartSPB extends React.Component {
         console.log(edges);
       },
     };
+
     return (
       <Graph
         graph={this.props.data}

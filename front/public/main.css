@@ -11976,3 +11976,7 @@ hr {
   background: transparent !important;
   border: none !important;
 }
+.chartIsInEvents {
+  height: 300px;
+  width: 100%;
+}

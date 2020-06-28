@@ -2,8 +2,9 @@ import Graph from "react-graph-vis";
 
 import React from "react";
 
-function ChartSPB() {
-    const graph = {
+class ChartSPB extends React.Component {
+  state = {
+    graph: {
       nodes: [
         {
           id: 1,
@@ -138,7 +139,9 @@ function ChartSPB() {
         { from: 4.2, to: 5.2 },
         { from: 4.2, to: 5.2 },
       ],
-    };
+    },
+  };
+  render() {
     const options = {
       layout: {
         randomSeed: undefined,
@@ -190,12 +193,13 @@ function ChartSPB() {
 
     return (
       <Graph
-        graph={graph}
+        graph={this.state.graph}
         options={options}
         events={events}
         style={{ height: "440px" }}
       />
     );
+  }
 }
 
 export default ChartSPB;

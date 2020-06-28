@@ -12,22 +12,6 @@ class Data extends React.Component {
     }
   }
 
-  downloadEmployeeData = () => {
-    fetch("http://sportpetergof.ru/attachments/article/1750/409.pdf").then(
-      (response) => {
-        response.blob().then((blob) => {
-          console.log(response);
-          let url = window.URL.createObjectURL(blob);
-          let a = document.createElement("a");
-          a.href = url;
-          a.download = "smth.pdf";
-          a.click();
-        });
-        //window.location.href = response.url;
-      }
-    );
-  };
-
   render() {
     return (
       <div>
@@ -160,10 +144,6 @@ class Data extends React.Component {
                         </div>
 
                         <ul class="dataset-resources unstyled">
-                          <a download href="http://sportpetergof.ru/attachments/article/1750/409.pdf"><button onClick={this.downloadEmployeeData}>
-                            Download
-                          </button></a>
-
                           <a href="#">
                             <button class="button is-danger is-outlined">
                               Скачать
@@ -194,15 +174,6 @@ class Data extends React.Component {
                         </div>
 
                         <ul class="dataset-resources unstyled">
-                          {/* <Link
-                            to="/files/gas_stations.geojson"
-                            target="_blank"
-                            download="gas_stations.geojson"
-                          >
-                            Download
-                          </Link> */}
-                          <a href="/files/gas_stations.geojson" download>Download</a>
-
                           <a href="#">
                             <button class="button is-danger is-outlined">
                               Скачать

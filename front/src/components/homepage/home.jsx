@@ -134,7 +134,7 @@ const MainSheet = () => {
       <div class="categories">
         <div class="category__wrapper">
           <div class="category--box">
-            <a class="category__link">
+            <Link class="category__link" to="/dataInterface">
               <div class="category__link-content">
                 <span class="category__icon">
                   <svg
@@ -149,7 +149,7 @@ const MainSheet = () => {
                 </span>
                 <span class="category__name">Жилые дома </span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>{" "}
         <div class="category__wrapper">

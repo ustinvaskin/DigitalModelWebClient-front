@@ -1,6 +1,7 @@
 import React from "react";
 
 import axios from "axios";
+import { ResponsiveBar } from "@nivo/bar";
 
 import { Map, Popup, Marker, TileLayer } from "react-leaflet";
 import { Link } from "react-router-dom";
@@ -21,6 +22,11 @@ class MainEvents extends React.Component {
       latLon: [59.97003, 30],
       zoom: 8.9,
       basemap: "osm",
+      date1: [],
+      showChart: false,
+      ShowMarkers: false,
+      showChartHashtag: false,
+      hashatgsFrequesncy: [],
     };
   }
 
@@ -50,21 +56,67 @@ class MainEvents extends React.Component {
     console.log(merged);
     merged.sort();
 
-    var current = null;
+    var hashtag = null;
     var cnt = 0;
+    let fooo = [];
     for (var i = 0; i < merged.length; i++) {
-      if (merged[i] != current) {
+      if (merged[i] != hashtag) {
         if (cnt > 0) {
-          console.log(current + " comes --> " + cnt + " times<br>");
+          fooo.push([hashtag, cnt]);
         }
-        current = merged[i];
+        hashtag = merged[i];
         cnt = 1;
       } else {
         cnt++;
       }
     }
-    if (cnt > 0) {
-      console.log(current + " comes --> " + cnt + " times");
+    this.setState({
+      hashatgsFrequesncy: fooo,
+    });
+    console.table(fooo);
+    console.log(fooo);
+
+    this.setState({
+      showChartHashtag: true,
+    });
+  };
+
+  countWithDays = () => {
+    // array merging events
+    let myDaysArray = [];
+    {
+      this.state.events.map((event) => {
+        myDaysArray.push(event.start.substring(0, 10));
+        console.log(myDaysArray);
+      });
+
+      // getting identical values to analayze later
+      var mergedDates = [].concat.apply([], myDaysArray);
+      console.log(mergedDates);
+      mergedDates.sort();
+
+      var date = null;
+      var cnt = 0;
+      let foo = [];
+      for (var i = 0; i < mergedDates.length - 1; i++) {
+        if (mergedDates[i] !== date) {
+          if (cnt > 0) {
+            foo.push([date, cnt]);
+          }
+          date = mergedDates[i];
+          cnt = 1;
+        } else {
+          cnt++;
+        }
+      }
+      this.setState({
+        date1: foo,
+      });
+      console.table(foo);
+      console.log(foo);
+      this.setState({
+        showChart: true,
+      });
     }
   };
 
@@ -72,14 +124,16 @@ class MainEvents extends React.Component {
     axios
       .get(`${process.env.REACT_APP_EVENTS_API}/incidents/search/getByDate`, {
         params: {
-          minDate: this.state.startDate,
-          maxDate: this.state.endDate,
+          minDate: `${this.state.startDate}-01`,
+          maxDate: `${this.state.endDate}-30`,
         },
       })
       .then((res) => {
         const events = res.data._embedded.incidents;
         this.setState({ events });
         this.setState({ onShowEvent: true });
+        this.countWithDays();
+        this.count();
       });
   };
 
@@ -113,7 +167,7 @@ class MainEvents extends React.Component {
     });
 
     console.log(this.state.events);
-
+    //console.log([[["Dinosaur", "Length"]].concat(this.state.date1)]);
     return (
       <div>
         <br />
@@ -172,7 +226,7 @@ class MainEvents extends React.Component {
                     <label for="start">Начало:</label>
                     <input
                       className=""
-                      type="date"
+                      type="month"
                       id="start"
                       name="trip-start"
                       onChange={this.onSelectStart}
@@ -183,7 +237,7 @@ class MainEvents extends React.Component {
                     <label for="start">Конец:</label>
                     <input
                       className="dateInput"
-                      type="date"
+                      type="month"
                       id="end"
                       name="trip-start"
                       onChange={this.onSelectEnd}
@@ -202,12 +256,7 @@ class MainEvents extends React.Component {
                   >
                     Отчистить
                   </button>
-                  <button
-                    class="button is-outlined is-danger is-in-problems"
-                    onClick={this.count}
-                  >
-                    console
-                  </button>
+
                   <br />
                   {this.state.events.length === 0 &&
                     this.state.onShowEvent === true && (
@@ -233,20 +282,21 @@ class MainEvents extends React.Component {
                       url={basemapsDict[this.state.basemap]}
                       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     />
-                    {this.state.events.map((event) => {
-                      return (
-                        <Marker
-                          key={event.id}
-                          position={event.geometry.coordinates}
-                          icon={iconForEvent}
-                        >
-                          <Popup>
-                            <p>{event.title}</p>
-                            <p>{event.start} </p>
-                          </Popup>
-                        </Marker>
-                      );
-                    })}
+                    {this.state.onShowEvent &&
+                      this.state.events.map((event) => {
+                        return (
+                          <Marker
+                            key={Math.floor(Math.random() * 100)}
+                            position={event.geometry.coordinates}
+                            icon={iconForEvent}
+                          >
+                            <Popup key={event.id}>
+                              <p>{event.title}</p>
+                              <p>{event.start} </p>
+                            </Popup>
+                          </Marker>
+                        );
+                      })}
                     {/* BaseMap Component */}
                     <Basemap
                       basemap={this.state.basemap}
@@ -255,7 +305,158 @@ class MainEvents extends React.Component {
                     )
                   </Map>
                 </div>
+                {this.state.showChart && this.state.events.length > 6 && (
+                  <div>
+                    <div className="chartIsInEvents">
+                      <br />
+                      <h3 class="heading-sidebar is-size-6 has-text-centered	 ">
+                        Количество публикаций по дням{" "}
+                      </h3>
+                      <ResponsiveBar
+                        data={this.state.date1.map((date) => {
+                          return {
+                            Дата: date[0],
+                            "Количество на": date[1],
+                          };
+                        })}
+                        keys={["Количество на"]}
+                        indexBy="Дата"
+                        margin={{ top: 50, right: 50, bottom: 50, left: 60 }}
+                        padding={0.3}
+                        colors={{ scheme: "nivo" }}
+                        defs={[
+                          {
+                            id: "dots",
+                            type: "patternDots",
+                            background: "inherit",
+                            color: "#38bcb2",
+                            size: 4,
+                            padding: 1,
+                            stagger: true,
+                          },
+                          {
+                            id: "lines",
+                            type: "patternLines",
+                            background: "inherit",
+                            color: "#eed312",
+                            rotation: -45,
+                            lineWidth: 6,
+                            spacing: 10,
+                          },
+                        ]}
+                        borderColor={{
+                          from: "color",
+                          modifiers: [["darker", 1.6]],
+                        }}
+                        axisTop={null}
+                        axisRight={null}
+                        axisBottom={{
+                          tickSize: 5,
+                          tickPadding: 5,
+                          tickRotation: -40,
+                          legend: "Дата",
+                          legendPosition: "middle",
+                          legendOffset: 62,
+                        }}
+                        axisLeft={{
+                          tickSize: 5,
+                          tickPadding: 5,
+                          tickRotation: 0,
+                          legend: "Количество",
+                          legendPosition: "middle",
+                          legendOffset: -40,
+                        }}
+                        enableGridX={true}
+                        enableLabel={false}
+                        labelSkipWidth={12}
+                        labelSkipHeight={12}
+                        labelTextColor={{
+                          from: "color",
+                          modifiers: [["darker", 1.6]],
+                        }}
+                        animate={true}
+                        motionStiffness={90}
+                        motionDamping={15}
+                      />
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div className="chartIsInEvents">
+                      <h3 class="heading-sidebar is-size-6 has-text-centered	 ">
+                        Частота хештегов{" "}
+                      </h3>
+                      <ResponsiveBar
+                        data={this.state.hashatgsFrequesncy.map((hastag) => {
+                          return {
+                            "Кол-во": hastag[0],
+                            Хэштег: hastag[1],
+                          };
+                        })}
+                        keys={["Хэштег"]}
+                        indexBy="Кол-во"
+                        margin={{ top: 50, right: 50, bottom: 90, left: 60 }}
+                        padding={0.3}
+                        colors={{ scheme: "accent" }}
+                        defs={[
+                          {
+                            id: "dots",
+                            type: "patternDots",
+                            background: "inherit",
+                            color: "#38bcb2",
+                            size: 4,
+                            padding: 1,
+                            stagger: true,
+                          },
+                          {
+                            id: "lines",
+                            type: "patternLines",
+                            background: "inherit",
+                            color: "#eed312",
+                            rotation: -45,
+                            lineWidth: 6,
+                            spacing: 10,
+                          },
+                        ]}
+                        borderColor={{
+                          from: "color",
+                          modifiers: [["darker", 1.6]],
+                        }}
+                        axisTop={null}
+                        axisRight={null}
+                        axisBottom={{
+                          tickSize: 5,
+                          tickPadding: 5,
+                          tickRotation: -40,
+                          legend: "Кол-во",
+                          legendPosition: "middle",
+                          legendOffset: 62,
+                        }}
+                        axisLeft={{
+                          tickSize: 5,
+                          tickPadding: 5,
+                          tickRotation: 0,
+                          legend: "Количество",
+                          legendPosition: "middle",
+                          legendOffset: -40,
+                        }}
+                        enableGridX={true}
+                        enableLabel={false}
+                        labelSkipWidth={12}
+                        labelSkipHeight={12}
+                        labelTextColor={{
+                          from: "color",
+                          modifiers: [["darker", 1.6]],
+                        }}
+                        animate={true}
+                        motionStiffness={90}
+                        motionDamping={15}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
+              <p></p>
             </div>
           </div>
         </div>

@@ -168,7 +168,11 @@ class ModelPopulationDescription extends React.Component {
                 <article class="panel is-info">
                   <p class="panel-heading">Данные и Ресурсы</p>
 
-                  <a class="panel-block is-active">
+                  <a
+                    class="panel-block is-active"
+                    href="https://github.com/iduprojects/populationmodel"
+                    target="_blank"
+                  >
                     <span class="panel-icon"></span>
                     Ссылка на исходный код модели
                   </a>
