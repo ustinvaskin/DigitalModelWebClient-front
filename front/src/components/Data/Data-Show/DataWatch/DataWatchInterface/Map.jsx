@@ -22,7 +22,7 @@ function DataShowInterface() {
     // List of names for select/option
   };
 
-  async function getDatasets() {
+   function getDatasets() {
     let urls = [
       {
         url: '/schools/search/findByGeometryType',
@@ -47,7 +47,7 @@ function DataShowInterface() {
         params: {
           size: '2'
         }
-      }/*,
+      },
       {
         url: 'cemeteries',
         params: {
@@ -71,25 +71,37 @@ function DataShowInterface() {
         params: {
           size: '9'
         }
-      }*/
+      }
     ];
     const axiosConfig = {
       method: 'get',
       baseURL: `${process.env.REACT_APP_MAIN_API}/api/`
     };
-    let foo = urls.map(url => axios(Object.assign(axiosConfig, url))
+    return urls.map(url => axios(Object.assign(axiosConfig, url))
       .then(({ data }) => data._embedded));
-      console.log(await Promise.allSettled(foo))
-    return foo;
   }
   async function createDatasets() {
     let aggregatedDatasets = aggregateDatasets(rawDatasets);
-    console.log(await aggregatedDatasets);
     return aggregatedDatasets;
   }
   async function aggregateDatasets(rawDatasets) {
     return await Promise.allSettled(rawDatasets)
-      .then(rawDatasets => rawDatasets.reduce((accum, rawDataset) => Object.assign(accum, rawDataset.value), {}));
+    .then(rawDatasets => rawDatasets.map(datasets => {
+      return Object.entries(datasets.value).reduce((accum, arr) => {
+        return Object.assign(accum, {name: arr[0], value: arr[1]});
+      }, {});
+    }))
+    .then(datasets => {
+      datasets.forEach((curr, i) => {
+        let finded = datasets.find((curr2, i2) => {
+          return (curr.name == curr2.name) && (i != i2);
+        });
+        if (!finded) return;
+        datasets[i].value = datasets[i].value.concat(finded.value);
+        finded.value = finded.name = undefined;
+      });
+      return datasets.filter(dataset => dataset.name);
+    });
   }
 
   const rawDatasets = getDatasets();
@@ -133,6 +145,9 @@ function DataShowInterface() {
       };
 
       function getLayerGroups(datasets) {
+        datasets = datasets.reduce((accum, type) => {
+          return Object.assign(accum, {[type.name]: type.value});
+        }, {});
         return Object.keys(datasets)
           .reduce((accum, key) => {
             let markers = datasets[key].map(point => {
