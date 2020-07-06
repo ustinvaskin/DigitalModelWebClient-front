@@ -3,23 +3,14 @@ import { Link } from "react-router-dom";
 
 class Con extends React.Component {
   state = {};
-
-  // To scroll up back again
-  componentDidMount() {
-    {
-      window.scrollTo(0, 0);
-    }
-  }
-
+  
   render() {
     return (
       <div>
-        <br />
-        <br />
-        <br />
+
         <div className="breadcrumbs">
           <nav
-            class=" breadcrumb has-arrow-separator is-centered"
+            className=" breadcrumb has-arrow-separator is-centered"
             aria-label="breadcrumbs"
           >
             <ul>
@@ -27,38 +18,38 @@ class Con extends React.Component {
                 <a href="/">Главная</a>
               </li>
 
-              <li class="">
+              <li className="">
                 <Link to="/about">О проекте</Link>
               </li>
 
-              <li class="is-active">
+              <li className="is-active">
                 <Link to="/">Контакты</Link>
               </li>
             </ul>
           </nav>
         </div>
 
-        <div class="page-content container">
-          <div class="wrapper">
-            <div class="row">
-              <div class="sidebar col-md-3 col-sm-12 col-xs-12">
-                <h3 class="heading-sidebar is-size-3"> Контакты</h3>
+        <div className="page-content container">
+          <div className="wrapper">
+            <div className="row">
+              <div className="sidebar col-md-3 col-sm-12 col-xs-12">
+                <h3 className="heading-sidebar is-size-3"> Контакты</h3>
                 <br />
                 <ul>
-                  <li class="sidebar-item">
+                  <li className="sidebar-item">
                     <Link to="/materials">
-                      <span class="sidebar-icon-wrapper">
-                        <span class="fa fa-long-arrow-right"></span>
+                      <span className="sidebar-icon-wrapper">
+                        <span className="fa fa-long-arrow-right"></span>
                       </span>
                       Материалы
                     </Link>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item">
+                  <li className="sidebar-item">
                     <Link to="/contacts">
-                      <span class="sidebar-icon-wrapper">
-                        <span class="fa fa-long-arrow-right"></span>
+                      <span className="sidebar-icon-wrapper">
+                        <span className="fa fa-long-arrow-right"></span>
                       </span>
                       Контакты
                     </Link>
@@ -67,27 +58,27 @@ class Con extends React.Component {
               </div>
 
               {/* Main cotent  */}
-              <div class="col-md-9 col-sm-12 col-xs-12 news-content">
+              <div className="col-md-9 col-sm-12 col-xs-12 news-content">
                 {/* Description */}
                 <div>
-                  <div class="container is-fluid" id="content">
+                  <div className="container is-fluid" id="content">
                     <section
                       data-section-id="1"
                       data-category="contacts"
                       data-component-id="c37c_10_01_awz"
-                      class="section"
+                      className="section"
                     >
-                      <div class="container py-4">
+                      <div className="container py-4">
                         <h2
-                          class="title has-text-centered mb-6"
+                          className="title has-text-centered mb-6"
                           data-config-id="header"
                         >
                           Контакты
                         </h2>
-                        <div class="columns">
-                          <div class="column is-6">
+                        <div className="columns">
+                          <div className="column is-6">
                             <p
-                              class="subtitle is-size-6"
+                              className="subtitle is-size-6"
                               data-config-id="description"
                             >
                               <span className="has-text-weight-semibold	">
@@ -100,9 +91,9 @@ class Con extends React.Component {
                               Университета ИТМО.
                             </p>
                             <div>
-                              <div class="media">
-                                <div class="media-left">
-                                  {/* <figure class="image is-24x24">
+                              <div className="media">
+                                <div className="media-left">
+                                  {/* <figure className="image is-24x24">
                                     <img
                                       src="placeholder/icons/map-marker.svg"
                                       alt=""
@@ -110,8 +101,8 @@ class Con extends React.Component {
                                     />
                                   </figure> */}
                                 </div>
-                                <div class="media-content">
-                                  <div class="content">
+                                <div className="media-content">
+                                  <div className="content">
                                     <a
                                       href="https://actcognitive.org"
                                       target="_blank"
@@ -122,9 +113,9 @@ class Con extends React.Component {
                                   </div>
                                 </div>
                               </div>
-                              <div class="media">
-                                <div class="media-left">
-                                  {/* <figure class="image is-24x24">
+                              <div className="media">
+                                <div className="media-left">
+                                  {/* <figure className="image is-24x24">
                                     <img
                                       src="placeholder/icons/phone.svg"
                                       alt=""
@@ -132,8 +123,8 @@ class Con extends React.Component {
                                     />
                                   </figure> */}
                                 </div>
-                                <div class="media-content">
-                                  <div class="content">
+                                <div className="media-content">
+                                  <div className="content">
                                     <p data-config-id="01_text2">
                                       Российская Федерация, 199034, г.
                                       Санкт-Петербург, Биржевая линия, д. 14,
@@ -164,9 +155,9 @@ class Con extends React.Component {
                             </div>
                           </div>
 
-                          <div class="column is-5 is-offset-1">
+                          <div className="column is-5 is-offset-1">
                             <p
-                              class="subtitle is-size-6"
+                              className="subtitle is-size-6"
                               data-config-id="description"
                             >
                               <span className="has-text-weight-semibold	">
@@ -181,9 +172,9 @@ class Con extends React.Component {
                               ориентированности.
                             </p>
                             <div>
-                              <div class="media">
-                                <div class="media-left">
-                                  {/* <figure class="image is-24x24">
+                              <div className="media">
+                                <div className="media-left">
+                                  {/* <figure className="image is-24x24">
                                     <img
                                       src="placeholder/icons/map-marker.svg"
                                       alt=""
@@ -191,8 +182,8 @@ class Con extends React.Component {
                                     />
                                   </figure> */}
                                 </div>
-                                <div class="media-content">
-                                  <div class="content">
+                                <div className="media-content">
+                                  <div className="content">
                                     <p data-config-id="01_text1">
                                       <a
                                         href="  https://idu.itmo.ru"
@@ -205,9 +196,9 @@ class Con extends React.Component {
                                   </div>
                                 </div>
                               </div>
-                              <div class="media">
-                                <div class="media-left">
-                                  {/* <figure class="image is-24x24">
+                              <div className="media">
+                                <div className="media-left">
+                                  {/* <figure className="image is-24x24">
                                     <img
                                       src="placeholder/icons/phone.svg"
                                       alt=""
@@ -215,8 +206,8 @@ class Con extends React.Component {
                                     />
                                   </figure> */}
                                 </div>
-                                <div class="media-content">
-                                  <div class="content">
+                                <div className="media-content">
+                                  <div className="content">
                                     <p data-config-id="01_text2">
                                       Российская Федерация, 199034, г.
                                       Санкт-Петербург, Биржевая линия, д. 14,
@@ -225,9 +216,9 @@ class Con extends React.Component {
                                   </div>
                                 </div>
                               </div>
-                              <div class="media">
-                                <div class="media-left">
-                                  {/* <figure class="image is-24x24">
+                              <div className="media">
+                                <div className="media-left">
+                                  {/* <figure className="image is-24x24">
                                     <img
                                       src="placeholder/icons/envelope.svg"
                                       alt=""
@@ -235,8 +226,8 @@ class Con extends React.Component {
                                     />
                                   </figure> */}
                                 </div>
-                                <div class="media-content">
-                                  <div class="content">
+                                <div className="media-content">
+                                  <div className="content">
                                     <p data-config-id="01_text3">
                                       <a href="mityagin@itmo.ru">
                                         {" "}

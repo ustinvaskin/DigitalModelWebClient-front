@@ -320,8 +320,8 @@
 
             $iframe.wrap(
               '<div class="article__iframe-wrapper" style="padding-top: ' +
-                paddingTop +
-                '%;"></div>'
+              paddingTop +
+              '%;"></div>'
             );
             $iframe.css(iframeCSS);
           },

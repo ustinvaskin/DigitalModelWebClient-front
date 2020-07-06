@@ -1,18 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../common/Breadcrumb";
 
-class Data extends React.Component {
-  state = {};
-
-  // To scroll up back again
-
-  componentDidMount() {
-    {
-      window.scrollTo(0, 0);
-    }
-  }
-
-  downloadEmployeeData = () => {
+function Data() {
+  let downloadEmployeeData = () => {
     fetch("http://sportpetergof.ru/attachments/article/1750/409.pdf").then(
       (response) => {
         response.blob().then((blob) => {
@@ -27,45 +18,26 @@ class Data extends React.Component {
       }
     );
   };
-
-  render() {
+    let breadcrumbs = ["Главная", "Скачать данные"];
     return (
       <div>
-        <br />
-        <br />
-        <br />
-        <div className="breadcrumbs">
-          <nav
-            class=" breadcrumb has-arrow-separator is-centered"
-            aria-label="breadcrumbs"
-          >
-            <ul>
-              <li>
-                <a href="/">Главная</a>
-              </li>
-
-              <li class="is-active">
-                <a href="/" aria-current="page">
-                  Скачать данные
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="page-content container">
-          <div class="wrapper">
-            <div class="row">
-              <div class="sidebar col-md-3 col-sm-12 col-xs-12">
-                <h3 class="heading-sidebar is-size-3">Скачать данные</h3>
+        <Breadcrumb breadcrumbs={breadcrumbs}/>
+        <div className="page-content container">
+          <div className="wrapper">
+            <div className="row">
+              <div className="sidebar col-md-3 col-sm-12 col-xs-12">
+                <h3 className="heading-sidebar is-size-3">
+                  {breadcrumbs[breadcrumbs.length - 1]}
+                </h3>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>Последнее обновление: </a>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>
-                      <span class=" is-info has-text-weight-normal	">
+                      <span className=" is-info has-text-weight-normal	">
                         {" "}
                         Данные: дата Модель: дата
                       </span>
@@ -74,27 +46,27 @@ class Data extends React.Component {
                 </ul>
 
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>Правообладатель: </a>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>
-                      <span class="tag is-info">ИТМО</span>
-                      <span class="tag is-info">НЦКР</span>{" "}
+                      <span className="tag is-info">ИТМО</span>
+                      <span className="tag is-info">НЦКР</span>{" "}
                     </a>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>Разработчик: </a>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>
-                      <span class=" is-info has-text-weight-normal	">
+                      <span className=" is-info has-text-weight-normal	">
                         {" "}
                         ИДУ, Лаборатория ЦТУГ
                       </span>
@@ -102,34 +74,34 @@ class Data extends React.Component {
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <a>Как связаться: </a>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item ">
+                  <li className="sidebar-item ">
                     <span className="is-size-7 has-text-weight-normal	">
                       <a href="mailto:  mityagin@itmo.ru"> mityagin@itmo.ru</a>
                     </span>
                   </li>
                 </ul>
                 <br />
-                <h3 class="heading-sidebar is-size-3">Ссылки</h3>
+                <h3 className="heading-sidebar is-size-3">Ссылки</h3>
                 <ul>
-                  <li class="sidebar-item">
+                  <li className="sidebar-item">
                     <Link to="/dataShow">
-                      <span class="sidebar-icon-wrapper">
-                        <span class="fa fa-long-arrow-right"></span>
+                      <span className="sidebar-icon-wrapper">
+                        <span className="fa fa-long-arrow-right"></span>
                       </span>
                       Оперативные данные
                     </Link>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item">
+                  <li className="sidebar-item">
                     <Link to="/dataInterface">
-                      <span class="sidebar-icon-wrapper">
-                        <span class="fa fa-long-arrow-right"></span>
+                      <span className="sidebar-icon-wrapper">
+                        <span className="fa fa-long-arrow-right"></span>
                       </span>
                       Просмотр данных
                     </Link>
@@ -137,12 +109,12 @@ class Data extends React.Component {
                 </ul>
               </div>
               {/* Main cotent  */}
-              <div class="primary border-left col-md-9 col-sm-12 col-xs-12">
-                <ul class="dataset-list unstyled">
-                  <li class="dataset-item">
-                    <div class="row">
-                      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
-                        <a class="dataset-heading" href="#">
+              <div className="primary border-left col-md-9 col-sm-12 col-xs-12">
+                <ul className="dataset-list unstyled">
+                  <li className="dataset-item">
+                    <div className="row">
+                      <div className="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
+                        <a className="dataset-heading" href="#">
                           <h3>
                             <span>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -159,13 +131,13 @@ class Data extends React.Component {
                           ex ea commodo consequat. Duis aute irure dolor in
                         </div>
 
-                        <ul class="dataset-resources unstyled">
-                          <a download href="http://sportpetergof.ru/attachments/article/1750/409.pdf"><button onClick={this.downloadEmployeeData}>
+                        <ul className="dataset-resources unstyled">
+                          <a download href="http://sportpetergof.ru/attachments/article/1750/409.pdf"><button onClick={downloadEmployeeData}>
                             Download
                           </button></a>
 
                           <a href="#">
-                            <button class="button is-danger is-outlined">
+                            <button className="button is-danger is-outlined">
                               Скачать
                             </button>
                           </a>
@@ -173,10 +145,10 @@ class Data extends React.Component {
                       </div>
                     </div>
                   </li>
-                  <li class="dataset-item">
-                    <div class="row">
-                      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
-                        <a class="dataset-heading" href="#">
+                  <li className="dataset-item">
+                    <div className="row">
+                      <div className="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
+                        <a className="dataset-heading" href="#">
                           <h3>
                             <span>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -193,7 +165,7 @@ class Data extends React.Component {
                           ex ea commodo consequat. Duis aute irure dolor in
                         </div>
 
-                        <ul class="dataset-resources unstyled">
+                        <ul className="dataset-resources unstyled">
                           {/* <Link
                             to="/files/gas_stations.geojson"
                             target="_blank"
@@ -204,7 +176,7 @@ class Data extends React.Component {
                           <a href="/files/gas_stations.geojson" download>Download</a>
 
                           <a href="#">
-                            <button class="button is-danger is-outlined">
+                            <button className="button is-danger is-outlined">
                               Скачать
                             </button>
                           </a>
@@ -212,10 +184,10 @@ class Data extends React.Component {
                       </div>
                     </div>
                   </li>
-                  <li class="dataset-item">
-                    <div class="row">
-                      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
-                        <a class="dataset-heading" href="#">
+                  <li className="dataset-item">
+                    <div className="row">
+                      <div className="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
+                        <a className="dataset-heading" href="#">
                           <h3>
                             <span>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -232,9 +204,9 @@ class Data extends React.Component {
                           ex ea commodo consequat. Duis aute irure dolor in
                         </div>
 
-                        <ul class="dataset-resources unstyled">
+                        <ul className="dataset-resources unstyled">
                           <a href="#">
-                            <button class="button is-danger is-outlined">
+                            <button className="button is-danger is-outlined">
                               Скачать
                             </button>
                           </a>
@@ -242,10 +214,10 @@ class Data extends React.Component {
                       </div>
                     </div>
                   </li>
-                  <li class="dataset-item">
-                    <div class="row">
-                      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
-                        <a class="dataset-heading" href="#">
+                  <li className="dataset-item">
+                    <div className="row">
+                      <div className="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
+                        <a className="dataset-heading" href="#">
                           <h3>
                             <span>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -262,9 +234,9 @@ class Data extends React.Component {
                           ex ea commodo consequat. Duis aute irure dolor in
                         </div>
 
-                        <ul class="dataset-resources unstyled">
+                        <ul className="dataset-resources unstyled">
                           <a href="#">
-                            <button class="button is-danger is-outlined">
+                            <button className="button is-danger is-outlined">
                               Скачать
                             </button>
                           </a>
@@ -272,10 +244,10 @@ class Data extends React.Component {
                       </div>
                     </div>
                   </li>
-                  <li class="dataset-item">
-                    <div class="row">
-                      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
-                        <a class="dataset-heading" href="#">
+                  <li className="dataset-item">
+                    <div className="row">
+                      <div className="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 dataset-content">
+                        <a className="dataset-heading" href="#">
                           <h3>
                             <span>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -292,9 +264,9 @@ class Data extends React.Component {
                           ex ea commodo consequat. Duis aute irure dolor in
                         </div>
 
-                        <ul class="dataset-resources unstyled">
+                        <ul className="dataset-resources unstyled">
                           <a href="#">
-                            <button class="button is-danger is-outlined">
+                            <button className="button is-danger is-outlined">
                               Скачать
                             </button>
                           </a>
@@ -309,7 +281,6 @@ class Data extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 export default Data;

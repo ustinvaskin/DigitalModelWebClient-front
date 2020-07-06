@@ -8,8 +8,6 @@ import L from "leaflet";
 
 import "./Styles/styles.css";
 
-import Basemap from "./BaseMap";
-
 class MainEvents extends React.Component {
   constructor() {
     super();
@@ -26,14 +24,6 @@ class MainEvents extends React.Component {
 
   onClearEvents = () => {
     window.location.reload();
-  };
-
-  // Change tilelayer
-  onBMChange = (bm) => {
-    console.log(this);
-    this.setState({
-      basemap: bm,
-    });
   };
 
   count = () => {
@@ -116,13 +106,11 @@ class MainEvents extends React.Component {
 
     return (
       <div>
-        <br />
-        <br />
-        <br />
+
         {/* Breadcrumbs */}
         <div className="breadcrumbs">
           <nav
-            class=" breadcrumb has-arrow-separator is-centered"
+            className=" breadcrumb has-arrow-separator is-centered"
             aria-label="breadcrumbs"
           >
             <ul>
@@ -135,7 +123,7 @@ class MainEvents extends React.Component {
               <li>
                 <Link to="/dataShow">Оперативные данные</Link>
               </li>
-              <li class="is-active">
+              <li className="is-active">
                 <a href="#" aria-current="page">
                   Публикации в социальных сетях
                 </a>
@@ -145,23 +133,23 @@ class MainEvents extends React.Component {
         </div>
         {/* END OF _____Breadcrumbs */}
 
-        <div class="page-content container">
-          <div class="wrapper">
-            <div class="row">
+        <div className="page-content container">
+          <div className="wrapper">
+            <div className="row">
               {/* Aside Left */}
               {/* Aside Left Name */}
-              <div class="sidebar col-md-3 col-sm-12 col-xs-12">
-                <h3 class="heading-sidebar is-size-4">
+              <div className="sidebar col-md-3 col-sm-12 col-xs-12">
+                <h3 className="heading-sidebar is-size-4">
                   Публикации в социальных сетях
                 </h3>
 
                 {/* END OF ___Aside Left Name */}
                 {/* Choose Territiry checkboxes */}
                 <ul>
-                  <li class="sidebar-item is-size-6">
+                  <li className="sidebar-item is-size-6">
                     <div className=" has-text-left is-choose-territory">
                       <br />
-                      <h3 class="heading-sidebar is-size-6 ">
+                      <h3 className="heading-sidebar is-size-6 ">
                         Выберите период
                       </h3>
                       <br />
@@ -191,19 +179,19 @@ class MainEvents extends React.Component {
                   </div>
 
                   <button
-                    class="button is-outlined is-danger is-in-problems"
+                    className="button is-outlined is-danger is-in-problems"
                     onClick={this.onShowEvents}
                   >
                     Применить
                   </button>
                   <button
-                    class="button is-outlined is-danger is-in-problems"
+                    className="button is-outlined is-danger is-in-problems"
                     onClick={this.onClearEvents}
                   >
                     Отчистить
                   </button>
                   <button
-                    class="button is-outlined is-danger is-in-problems"
+                    className="button is-outlined is-danger is-in-problems"
                     onClick={this.count}
                   >
                     console
@@ -222,7 +210,7 @@ class MainEvents extends React.Component {
               {/* // MAP  */}
               {/* END OF _____Aside Left */}
               {/* Main cotent  */}
-              <div class="col-md-9 col-sm-12 col-xs-12 news-content">
+              <div className="col-md-9 col-sm-12 col-xs-12 news-content">
                 <div className="leaflet-container leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom">
                   <Map
                     ref="map"
@@ -247,11 +235,6 @@ class MainEvents extends React.Component {
                         </Marker>
                       );
                     })}
-                    {/* BaseMap Component */}
-                    <Basemap
-                      basemap={this.state.basemap}
-                      onChange={this.onBMChange}
-                    />
                     )
                   </Map>
                 </div>

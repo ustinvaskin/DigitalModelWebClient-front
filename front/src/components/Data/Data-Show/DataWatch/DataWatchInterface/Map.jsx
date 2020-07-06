@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
-import L from "leaflet";
+import L, { polygon } from "leaflet";
+
+import Deflate from 'react-leaflet-deflate';
 
 import ArtSpaceGeoJsonVisible from "./GeoJsonLayers/ArtSpaceGeoJsonVisible";
 import DistrictsGeoJSONLayer from "./GeoJsonLayers/DistrictGeoJsonLayer";
@@ -8,22 +10,26 @@ import MOGeojsonLayer from "./GeoJsonLayers/MOGeoJsonLayer";
 import "./Styles/styles.css";
 
 function DataShowInterface() {
-  // Map basic info
+  
   const mapInfo = {
     latLon: [59.97003, 30],
-    zoom: 8.9,
-    basemap: "osm"
+    zoom: 8.9
   };
 
-  const onShow = {
-    ArtSpaceGeoJsonVisible: false,
-    DistrictGeoJsonVisible: false,
-    MoGeoJsonVisible: false,
-    // List of names for select/option
-  };
-
-   function getDatasets() {
+  function getDatasets() {
     let urls = [
+      {
+        url: '/kindergartens/search/findByGeometryType',
+        params: {
+          type: 'ST_Point'
+        }
+      },
+      {
+        url: '/kindergartens/search/findByGeometryType',
+        params: {
+          type: 'ST_Polygon'
+        }
+      },
       {
         url: '/schools/search/findByGeometryType',
         params: {
@@ -37,39 +43,81 @@ function DataShowInterface() {
         }
       },
       {
-        url: 'churches',
+        url: '/colleges/search/findByGeometryType',
         params: {
-          size: '4'
+          type: 'ST_Point'
         }
       },
       {
-        url: 'charging_stations',
+        url: '/colleges/search/findByGeometryType',
         params: {
-          size: '2'
+          type: 'ST_Polygon'
         }
       },
       {
-        url: 'cemeteries',
+        url: '/universities/search/findByGeometryType',
         params: {
-          size: '6'
+          type: 'ST_Point'
         }
       },
       {
-        url: 'kindergartens',
+        url: '/universities/search/findByGeometryType',
         params: {
-          size: '7'
+          type: 'ST_Polygon'
         }
       },
       {
-        url: 'colleges',
+        url: 'art_spaces/search/findByGeometryType',
         params: {
-          size: '8'
+          type: 'ST_Point'
         }
       },
       {
-        url: 'universities',
+        url: 'art_spaces/search/findByGeometryType',
         params: {
-          size: '9'
+          type: 'ST_Polygon'
+        }
+      },
+      {
+        url: 'art_spaces/search/findByGeometryType',
+        params: {
+          type: 'ST_MultiPolygon'
+        }
+      },
+      {
+        url: 'churches/search/findByGeometryType',
+        params: {
+          type: 'ST_Point'
+        }
+      },
+      {
+        url: 'churches/search/findByGeometryType',
+        params: {
+          type: 'ST_Polygon'
+        }
+      },
+      {
+        url: 'cemeteries/search/findByGeometryType',
+        params: {
+          type: 'ST_Point'
+        }
+      },
+      {
+        url: 'cemeteries/search/findByGeometryType',
+        params: {
+          type: 'ST_Polygon'
+        }
+      },
+      {
+        url: 'charging_stations/search/findByGeometryType',
+        params: {
+          type: 'ST_Point'
+        }
+      },
+      {
+        url: 'charging_stations/search/findByGeometryType',
+        params: {
+          type: 'ST_Polygon'
         }
       }
     ];
@@ -86,92 +134,141 @@ function DataShowInterface() {
   }
   async function aggregateDatasets(rawDatasets) {
     return await Promise.allSettled(rawDatasets)
-    .then(rawDatasets => rawDatasets.map(datasets => {
-      return Object.entries(datasets.value).reduce((accum, arr) => {
-        return Object.assign(accum, {name: arr[0], value: arr[1]});
-      }, {});
-    }))
-    .then(datasets => {
-      datasets.forEach((curr, i) => {
-        let finded = datasets.find((curr2, i2) => {
-          return (curr.name == curr2.name) && (i != i2);
+      .then(rawDatasets => rawDatasets.map(datasets => {
+        return Object.entries(datasets.value).reduce((accum, arr) => {
+          return Object.assign(accum, { name: arr[0], value: arr[1] });
+        }, {});
+      }))
+      .then(datasets => {
+        datasets.forEach((curr, i) => {
+          let finded = datasets.find((curr2, i2) => {
+            return (curr.name === curr2.name) && (i !== i2);
+          });
+          if ((finded === undefined) || (finded.value === undefined)) return;
+          datasets[i].value = datasets[i].value.concat(finded.value);
+          finded.value = finded.name = undefined;
         });
-        if (!finded) return;
-        datasets[i].value = datasets[i].value.concat(finded.value);
-        finded.value = finded.name = undefined;
+
+        return datasets.filter(dataset => dataset.name);
       });
-      return datasets.filter(dataset => dataset.name);
-    });
   }
 
   const rawDatasets = getDatasets();
 
-  //useEffect(() => {
-    async function createMap() {
-      const normalizedNames = {
-        cemeteries: 'Кладбища',
-        charging_stations: 'Заправки автомобилей',
-        churches: 'Церкви',
-        colleges: 'Колледжи',
-        kindergartens: 'Детские сады',
-        schools: 'Школы',
-        universities: 'Университеты'
-      };
-      const iconForEvent = new L.Icon({
-        iconUrl: require("../../../../../img/marker.svg"),
-        iconRetinaUrl: require("../../../../../img/marker.svg"),
-        iconSize: new L.Point(30, 30),
-        className: "leaflet-div-icon",
-      });
-      const basemapsDict = {
-        osm: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        hot: "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-        dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-        cycle: "https://dev.{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png",
-      };
-      let baseMaps = {
-        "OSM": L.tileLayer(basemapsDict.osm, {
-          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }),
-        "OSM HOT": L.tileLayer(basemapsDict.hot, {
-          attribution: ''
-        }),
-        "DARK": L.tileLayer(basemapsDict.dark, {
-          attribution: ''
-        }),
-        "CYCLE MAP": L.tileLayer(basemapsDict.cycle, {
-          attribution: ''
-        })
-      };
+  async function createMap() {
+    const normalizedNames = {
+      cemeteries: 'Кладбища',
+      charging_stations: 'Заправки электромобилей',
+      churches: 'Церкви',
+      colleges: 'Колледжи',
+      kindergartens: 'Детские сады',
+      schools: 'Школы',
+      universities: 'Университеты',
+      art_spaces: 'Арт-пространства'
+    };
+    const iconForEvent = new L.Icon({
+      iconUrl: require("../../../../../img/marker.svg"),
+      iconRetinaUrl: require("../../../../../img/marker.svg"),
+      iconSize: new L.Point(25, 25),
+      className: "leaflet-div-icon",
+    });
+    const clusterizationParams = {
+      minSize: 15,
+      markerCluster: true,
+      markerOptions: {
+        icon: iconForEvent
+      },
+      markerClusterOptions: {
+        maxClusterRadius: 40
+      }
+    };
+    const basemapsDict = {
+      osm: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      hot: "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+      dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
+      cycle: "https://dev.{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png",
+    };
+    let baseMaps = {
+      "OSM": L.tileLayer(basemapsDict.osm, {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      }),
+      "OSM HOT": L.tileLayer(basemapsDict.hot, {
+        attribution: ''
+      }),
+      "DARK": L.tileLayer(basemapsDict.dark, {
+        attribution: ''
+      }),
+      "CYCLE MAP": L.tileLayer(basemapsDict.cycle, {
+        attribution: ''
+      })
+    };
 
-      function getLayerGroups(datasets) {
-        datasets = datasets.reduce((accum, type) => {
-          return Object.assign(accum, {[type.name]: type.value});
-        }, {});
-        return Object.keys(datasets)
-          .reduce((accum, key) => {
-            let markers = datasets[key].map(point => {
-              if (point.geometry.type == "Polygon") {
-                let reversedCoords = point.geometry.coordinates[0].map(coord => coord.reverse());
-                return L.polygon(reversedCoords, {color: 'red'});
-              }
-              if (point.geometry.type == "Point") {
-                return L.marker(point.geometry.coordinates.reverse(), { icon: iconForEvent }).bindPopup(point.name);
+    function renameLayers(layers) {
+      let normalizedLayers = {};
+      for (const key in layers) {
+        normalizedLayers[normalizedNames[key]] = layers[key];
+      }
+      return normalizedLayers;
+    }
+    function onEachFeature(feature, layer) {
+      layer.bindPopup(feature.properties.name);
+    }
+    function pointToLayer(feature, latlng) {
+      return L.marker(latlng, {
+        icon: iconForEvent
+      });
+    }
+    function getLayerGroups(datasets) {
+      datasets = datasets.reduce((accum, type) => {
+        return Object.assign(accum, { [type.name]: type.value });
+      }, {});
+      return Object.keys(datasets)
+        .reduce((accum, key) => {
+          let clusteredGroup = L.deflate(clusterizationParams);
+          datasets[key].forEach(point => {
+            // let reversedCoords = reverse(point.geometry.coordinates);
+            let geoJSON = L.geoJSON(point, {
+              onEachFeature,
+              pointToLayer,
+              style: (feature) => {
+                switch (feature.geometry.type) {
+                  case 'Polygon':
+                  case 'MultiPolygon': return {
+                    color: 'red'
+                  };
+                }
               }
             });
-            return Object.assign(accum, { [key]: L.layerGroup(markers) });
-          }, {});
-      }
-
-      let datasets = await createDatasets();
-      let layerGroups = getLayerGroups(datasets);
-      const mapOptions = { layers: [baseMaps.OSM, layerGroups.schools] };
-      let map = L.map('map', mapOptions).setView(mapInfo.latLon, mapInfo.zoom);
-      L.control.layers(baseMaps, layerGroups).addTo(map);
-      return map;
+            geoJSON.addTo(clusteredGroup);
+          });
+          return Object.assign(accum, { [key]: clusteredGroup });
+        }, {});
     }
-    let map = createMap();
- // });
+
+    let datasets = await createDatasets();
+    console.log(datasets);
+    datasets = datasets.map(dataset => {
+      let value = dataset.value.map(GEOjson => {
+        let geometry = Object.assign({}, GEOjson.geometry);
+        delete GEOjson.geometry;
+        let properties = GEOjson;
+        return {
+          type: 'Feature',
+          geometry,
+          properties
+        };
+      });
+      return {name: dataset.name, value};
+    });
+    let layerGroups = getLayerGroups(datasets);
+    let clusteredMarkers = renameLayers(layerGroups);
+    const mapOptions = { layers: [baseMaps.OSM] };
+    let map = L.map('map', mapOptions);
+    map.setView(mapInfo.latLon, mapInfo.zoom);
+    L.control.layers(baseMaps, clusteredMarkers, {collapsed: false}).addTo(map);
+    return map;
+  }
+  let map = createMap();
 
   return (
     <div id="map">
@@ -202,17 +299,3 @@ function DataShowInterface() {
 }
 
 export default DataShowInterface;
-
-// Записи
-// некоторые школы мультиполтгоны им надо GeoJson
-// школы и униыверситеты и дет сады потом разделят по типам point для маркера и polygon для geogson object
-// потмо будем axios обращение к ним и рендерить на карте соответственно
-
-// полигоны школ
-// 625 - 643
-// полигоны колледж
-// 101-109?
-// полигоны универ
-// 136-150
-
-// Все марекеры тут необходимо поменять координаты [0][1] на [1][0]

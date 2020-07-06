@@ -4,22 +4,13 @@ import { Link } from "react-router-dom";
 class AboutUspPage extends React.Component {
   state = {};
 
-  // To scroll up back again
-  componentDidMount() {
-    {
-      window.scrollTo(0, 0);
-    }
-  }
-
   render() {
     return (
       <div>
-        <br />
-        <br />
-        <br />
+
         <div className="breadcrumbs">
           <nav
-            class=" breadcrumb has-arrow-separator is-centered"
+            className=" breadcrumb has-arrow-separator is-centered"
             aria-label="breadcrumbs"
           >
             <ul>
@@ -27,34 +18,34 @@ class AboutUspPage extends React.Component {
                 <a href="/">Главная</a>
               </li>
 
-              <li class="is-active">
+              <li className="is-active">
                 <Link to="/">О Проекте</Link>
               </li>
             </ul>
           </nav>
         </div>
 
-        <div class="page-content container">
-          <div class="wrapper">
-            <div class="row">
-              <div class="sidebar col-md-3 col-sm-12 col-xs-12">
-                <h3 class="heading-sidebar is-size-3"> О нас</h3>
+        <div className="page-content container">
+          <div className="wrapper">
+            <div className="row">
+              <div className="sidebar col-md-3 col-sm-12 col-xs-12">
+                <h3 className="heading-sidebar is-size-3"> О нас</h3>
                 <br />
                 <ul>
-                  <li class="sidebar-item">
+                  <li className="sidebar-item">
                     <Link to="/materials">
-                      <span class="sidebar-icon-wrapper">
-                        <span class="fa fa-long-arrow-right"></span>
+                      <span className="sidebar-icon-wrapper">
+                        <span className="fa fa-long-arrow-right"></span>
                       </span>
                       Материалы
                     </Link>
                   </li>
                 </ul>
                 <ul>
-                  <li class="sidebar-item">
+                  <li className="sidebar-item">
                     <Link to="/contacts">
-                      <span class="sidebar-icon-wrapper">
-                        <span class="fa fa-long-arrow-right"></span>
+                      <span className="sidebar-icon-wrapper">
+                        <span className="fa fa-long-arrow-right"></span>
                       </span>
                       Контакты
                     </Link>
@@ -63,19 +54,19 @@ class AboutUspPage extends React.Component {
               </div>
 
               {/* Main cotent  */}
-              <div class="col-md-9 col-sm-12 col-xs-12 news-content">
+              <div className="col-md-9 col-sm-12 col-xs-12 news-content">
                 {/* Description */}
                 <div>
-                  <div class="">
+                  <div className="">
                     <div className="">
-                      <p class="card-header-title is-size-4 has-text-centered">
+                      <p className="card-header-title is-size-4 has-text-centered">
                         Платформа лояльности горожан к решениям умного города
                       </p>
                       <hr />
-                      <div class="card-content">
-                        <div class="content ">
-                          <section class="section">
-                            <div class="container">
+                      <div className="card-content">
+                        <div className="content ">
+                          <section className="section">
+                            <div className="container">
                               <p className="has-text-weight-semibold">
                                 Основана на ценностно-ориентированной оценки
                                 качества жизни в умном городе, реализует
@@ -89,8 +80,8 @@ class AboutUspPage extends React.Component {
                             </div>
                           </section>
 
-                          <section class="section">
-                            <div class="container">
+                          <section className="section">
+                            <div className="container">
                               <h2>Целью проекта является </h2>
                               <p>
                                 предоставление правительствам городов обратной
@@ -101,8 +92,8 @@ class AboutUspPage extends React.Component {
                               </p>
                             </div>
                           </section>
-                          <section class="section">
-                            <div class="container">
+                          <section className="section">
+                            <div className="container">
                               <h2>Возможности </h2>
                               <ul>
                                 <li>
@@ -133,25 +124,25 @@ class AboutUspPage extends React.Component {
                               </ul>
                             </div>
                           </section>
-                          <div class="container is-fluid" id="content">
+                          <div className="container is-fluid" id="content">
                             <section
                               data-section-id="1"
                               data-category="team"
                               data-component-id="c37c_7_02_awz"
-                              class="section"
+                              className="section"
                             >
-                              <div class="container has-text-centered py-4">
-                                <h2 class="title" data-config-id="header">
+                              <div className="container has-text-centered py-4">
+                                <h2 className="title" data-config-id="header">
                                   Включает компоненты:
                                 </h2>
 
-                                <div class="columns is-centered is-multiline py-5">
-                                  <div class="column is-6 is-3-widescreen mb-6">
-                                    <div class="level">
-                                      <div class="level-item">
-                                        <figure class="image is-128x128">
+                                <div className="columns is-centered is-multiline py-5">
+                                  <div className="column is-6 is-3-widescreen mb-6">
+                                    <div className="level">
+                                      <div className="level-item">
+                                        <figure className="image is-128x128">
                                           <img
-                                            class="is"
+                                            className="is"
                                             src="https://i.imgur.com/A1acRV3.png"
                                             alt=""
                                             data-config-id="02_img1"
@@ -161,19 +152,19 @@ class AboutUspPage extends React.Component {
                                     </div>
 
                                     <p
-                                      class="subtitle is-6"
+                                      className="subtitle is-6"
                                       data-config-id="02_job1"
                                     >
                                       Ценностную модель качества жизни в умном
                                       городе
                                     </p>
                                   </div>
-                                  <div class="column is-6 is-3-widescreen mb-6">
-                                    <div class="level">
-                                      <div class="level-item">
-                                        <figure class="image is-128x128">
+                                  <div className="column is-6 is-3-widescreen mb-6">
+                                    <div className="level">
+                                      <div className="level-item">
+                                        <figure className="image is-128x128">
                                           <img
-                                            class=""
+                                            className=""
                                             src="https://i.imgur.com/ynS57OW.png"
                                             alt=""
                                             data-config-id="02_img2"
@@ -183,19 +174,19 @@ class AboutUspPage extends React.Component {
                                     </div>
 
                                     <p
-                                      class="subtitle is-6"
+                                      className="subtitle is-6"
                                       data-config-id="02_job2"
                                     >
                                       Мониторинг состояния и структуры городских
                                       инфраструктур и функций
                                     </p>
                                   </div>
-                                  <div class="column is-6 is-3-widescreen mb-6">
-                                    <div class="level">
-                                      <div class="level-item">
-                                        <figure class="image is-128x128">
+                                  <div className="column is-6 is-3-widescreen mb-6">
+                                    <div className="level">
+                                      <div className="level-item">
+                                        <figure className="image is-128x128">
                                           <img
-                                            class=""
+                                            className=""
                                             src="https://i.imgur.com/Ke3Ay5M.png"
                                             alt=""
                                             data-config-id="02_img3"
@@ -205,19 +196,19 @@ class AboutUspPage extends React.Component {
                                     </div>
 
                                     <p
-                                      class="subtitle is-6"
+                                      className="subtitle is-6"
                                       data-config-id="02_job3"
                                     >
                                       Оценку потребности города и горожан в
                                       решениях умного города
                                     </p>
                                   </div>
-                                  <div class="column is-6 is-3-widescreen mb-6">
-                                    <div class="level">
-                                      <div class="level-item">
-                                        <figure class="image is-128x128">
+                                  <div className="column is-6 is-3-widescreen mb-6">
+                                    <div className="level">
+                                      <div className="level-item">
+                                        <figure className="image is-128x128">
                                           <img
-                                            class=""
+                                            className=""
                                             src="https://i.imgur.com/N8R6Zv8.png"
                                             alt=""
                                             data-config-id="02_img4"
@@ -227,7 +218,7 @@ class AboutUspPage extends React.Component {
                                     </div>
 
                                     <p
-                                      class="subtitle is-6"
+                                      className="subtitle is-6"
                                       data-config-id="02_job4"
                                     >
                                       Оценку индикаторов «умности» города и
@@ -238,8 +229,8 @@ class AboutUspPage extends React.Component {
                               </div>
                             </section>
 
-                            <section class="section">
-                              <div class="container">
+                            <section className="section">
+                              <div className="container">
                                 <p className="">
                                   <span className="has-text-weight-bold">
                                     Платформа входит в комплекс решений умного
@@ -253,8 +244,8 @@ class AboutUspPage extends React.Component {
                                 </p>
                               </div>
                             </section>
-                            <section class="section">
-                              <div class="container">
+                            <section className="section">
+                              <div className="container">
                                 <img
                                   src="https://i.imgur.com/lGo5mTP.png"
                                   alt=""
@@ -268,23 +259,23 @@ class AboutUspPage extends React.Component {
                   </div>
                 </div>
                 {/* //Data and Resorses  */}
-                <header class="card-header">
-                  <p class="card-header-title is-size-4">Данные и Ресурсы</p>
+                <header className="card-header">
+                  <p className="card-header-title is-size-4">Данные и Ресурсы</p>
                 </header>
-                <div class="card-content">
-                  <div class="columns">
-                    <div class="column">
+                <div className="card-content">
+                  <div className="columns">
+                    <div className="column">
                       <span>
                         <span>Презентация</span>
                       </span>
                     </div>
-                    <div class="column">
-                      <button class="button btn-is-download is-rounded is-link ">
+                    <div className="column">
+                      <button className="button btn-is-download is-rounded is-link ">
                         Скачать
                       </button>
                     </div>
                   </div>
-                  <div class="content"></div>
+                  <div className="content"></div>
                 </div>
               </div>
             </div>

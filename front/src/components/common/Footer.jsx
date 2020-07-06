@@ -1,21 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class Footer extends React.Component {
   state = {};
   render() {
     return (
-      <footer id="dark-footer" class="footer footer-dark">
+      <footer id="dark-footer" className="footer footer-dark">
         <hr />
-        <div class="container">
-          <div class="columns">
-            <div class="column">
-              <div class="footer-column">
-                <div class="footer-header">
+        <div className="container">
+          <div className="columns">
+            <div className="column">
+              <div className="footer-column">
+                <div className="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Данные</h3>
                 </div>
                 <br />
-                <ul class="link-list  has-text-weight-semibold is-size-7	">
+                <ul className="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <Link to="/data">Данные</Link>
                   </li>
@@ -39,40 +39,39 @@ class Footer extends React.Component {
                 </ul>
               </div>
             </div>
-            <div class="column">
-              <div class="footer-column">
-                <div class="footer-header">
+            <div className="column">
+              <div className="footer-column">
+                <div className="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Модели</h3>
                 </div>
                 <br />
-                <ul class="link-list  has-text-weight-semibold is-size-7	">
+                <ul className="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <Link to="/models">Модели</Link>
                   </li>
                   <li>
-                    <Link to="/population">
-                      {" "}
+                    <Link to="/models/population">
                       Расселение и структура населения
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/InterfaceModelPopulation">
+                    <Link to="/models/population/demonstration">
                       Интерфейс модели Населения
                     </Link>
                   </li>
                   <li>
-                    <Link to="/InterfaceModelPopulationSocial">
+                    <Link to="/models/population/demonstration">
                       Интерфейс модели расселения соц. групп
                     </Link>
                   </li>
                   <li>
-                    <Link to="/humansosciety">
+                    <Link to="/models/human-society">
                       Лояльность населения к умному городу{" "}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/InterfaceHumanSociety">
+                    <Link to="/models/human-society/demonstration">
                       Модель жизни в умном городе
                     </Link>
                   </li>
@@ -80,17 +79,17 @@ class Footer extends React.Component {
                     <a href="/">Общая обеспеченность групп </a>
                   </li>
                   <li>
-                    <Link to="/ecology">Экологическое воздействие</Link>
+                    <Link to="/models/ecology">Экологическое воздействие</Link>
                   </li>
                   <li>
-                    <Link to="/transport">Транспортная доступность</Link>
+                    <Link to="/models/transport">Транспортная доступность</Link>
                   </li>
                 </ul>
-                {/* <div class="footer-header">
+                {/* <div className="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Новости</h3>
                 </div> */}
                 {/* <br />
-                <ul class="link-list  has-text-weight-semibold is-size-7	">
+                <ul className="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <a href="/">Новости </a>
                   </li>
@@ -99,11 +98,11 @@ class Footer extends React.Component {
                   </li>
                 </ul> */}
 
-                {/* <div class="footer-header">
+                {/* <div className="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Вопросы</h3>
                 </div> */}
                 {/* <br />
-                <ul class="link-list  has-text-weight-semibold is-size-7	">
+                <ul className="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <a href="/">Вопросы </a>
                   </li>
@@ -124,13 +123,13 @@ class Footer extends React.Component {
                 <br /> */}
               </div>
             </div>
-            <div class="column">
-              {/* <div class="footer-column">
-                <div class="footer-header">
+            <div className="column">
+              {/* <div className="footer-column">
+                <div className="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">Бизнес</h3>
                 </div>
                 <br />
-                <ul class="link-list  has-text-weight-semibold is-size-7	">
+                <ul className="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <a href="/">Бизнес </a>
                   </li>
@@ -146,12 +145,12 @@ class Footer extends React.Component {
                 </ul>
               </div> */}
 
-              <div class="footer-column">
-                <div class="footer-header">
+              <div className="footer-column">
+                <div className="footer-header">
                   <h3 className="has-text-weight-bold is-size-5	">О нас</h3>
                 </div>
                 <br />
-                <ul class="link-list  has-text-weight-semibold is-size-7	">
+                <ul className="link-list  has-text-weight-semibold is-size-7	">
                   <li>
                     <Link to="/about">О нас</Link>
                   </li>
@@ -164,24 +163,24 @@ class Footer extends React.Component {
                 </ul>
               </div>
             </div>
-            <div class="column">
-              <div class="footer-column">
-                <div class="footer-logo">
+            <div className="column">
+              <div className="footer-column">
+                <div className="footer-logo">
                   <img
                     src="https://i.imgur.com/Gnk6rrh.png"
                     alt="логотип НЦКР"
-                    class="nav__nccr-logo"
+                    className="nav__nccr-logo"
                   />
                 </div>
-                <div class="footer-header">
-                  <nav class="level is-mobile">
-                    <div class="level-left level-social">
-                      <a href="/" class="level-item"></a>
+                <div className="footer-header">
+                  <nav className="level is-mobile">
+                    <div className="level-left level-social">
+                      <a href="/" className="level-item"></a>
                     </div>
                   </nav>
                 </div>
-                <div class="copyright">
-                  <span class="moto light-text">
+                <div className="copyright">
+                  <span className="moto light-text">
                     © 2020 ITMO&nbsp;UDI&nbsp;
                   </span>
                 </div>
@@ -194,4 +193,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default withRouter(Footer);
