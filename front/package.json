@@ -34,7 +34,7 @@
     "react-graph-vis": "^1.0.5",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-sigma": "^1.2.34",
     "recharts": "^1.8.5"
   },
